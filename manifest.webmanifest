@@ -1,0 +1,29 @@
+{
+  "name": "Livret de Formation en Psychiatrie — CH Gérard Marchant",
+  "short_name": "Livret Psy",
+  "description": "Livret pédagogique de psychiatrie pour étudiants infirmiers.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F0EDE8",
+  "theme_color": "#16213E",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
