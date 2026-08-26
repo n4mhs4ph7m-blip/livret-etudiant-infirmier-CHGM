@@ -52,8 +52,8 @@
 :root[data-theme="dark"] [style*="background:#FEF9E7"]{background:#33280a!important;}
 :root[data-theme="dark"] .quiz-opt,:root[data-theme="dark"] .quiz-vf-btn{color:#e7eaee;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;font-size:15px;}
-body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-height:1.68;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html{scroll-behavior:smooth;font-size:15px;overflow-x:hidden;}
+body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-height:1.68;-webkit-print-color-adjust:exact;print-color-adjust:exact;overflow-x:hidden;width:100%;}
 .sidenav{position:fixed;top:0;left:0;width:224px;height:100vh;background:var(--navy);overflow-y:auto;z-index:100;padding-bottom:40px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent;}
 .nav-brand{padding:22px 20px 18px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;}
 .nav-brand-t{font-family:var(--ff-title);font-size:15px;font-weight:700;color:#fff;line-height:1.25;}
@@ -155,6 +155,21 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-heigh
 .me-reset-btn{font-size:11px;color:var(--bord);background:var(--bord-l);border:1px solid var(--bord);border-radius:20px;padding:7px 14px;cursor:pointer;font-weight:600;margin-top:4px;}
 .me-reset-btn:hover{background:var(--bord);color:#fff;}
 .me-wrong-badge{font-size:9.5px;color:var(--bord);background:var(--bord-l);border-radius:10px;padding:2px 7px;font-weight:700;flex-shrink:0;}
+.qh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:20px;}
+.qh-card{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 16px;text-decoration:none;transition:background .15s;}
+.qh-card:hover{background:rgba(255,255,255,.14);}
+.qh-card-title{font-family:var(--ff-title);font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;}
+.qh-card-bar{background:rgba(255,255,255,.15);border-radius:20px;height:6px;overflow:hidden;margin-bottom:6px;}
+.qh-card-bar-fill{height:100%;background:#e8d5f5;border-radius:20px;}
+.qh-card-score{font-size:10.5px;color:rgba(255,255,255,.55);}
+.qh-review{background:rgba(0,0,0,.15);border-radius:12px;padding:16px;}
+.qh-review h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:10px;}
+.qh-review-list{list-style:none;padding:0;margin:0 0 8px;display:flex;flex-direction:column;gap:6px;}
+.qh-review-list li{display:flex;align-items:center;justify-content:space-between;gap:8px;background:rgba(255,255,255,.07);border-radius:8px;padding:8px 10px;}
+.qh-review-list a{font-size:11.5px;color:#f0e6f8;text-decoration:none;flex:1;}
+.qh-review-list a:hover{text-decoration:underline;}
+.qh-wrong-badge{font-size:9.5px;color:#fff;background:rgba(139,26,26,.6);border-radius:10px;padding:2px 8px;font-weight:700;flex-shrink:0;}
+.qh-empty,.qh-hint{font-size:11px;color:rgba(255,255,255,.5);font-style:italic;}
 @media(max-width:820px){.me-stats{grid-template-columns:repeat(2,1fr);}}
 .nav-icon{font-size:12px;opacity:.75;flex-shrink:0;}
 .nav-qbadge{margin-left:auto;font-size:8.5px;font-weight:700;background:var(--gold);color:#fff;padding:1px 6px;border-radius:20px;flex-shrink:0;}
@@ -373,7 +388,16 @@ tbody td:first-child{font-weight:600;color:var(--navy);font-size:12.5px;}
 .quiz-reset:hover{background:rgba(255,255,255,.12);color:#fff;}
 @media print{body{background:#fff!important;font-size:12pt;}.sidenav{display:none!important;}.main{margin-left:0!important;padding:0!important;max-width:100%!important;}.quiz-block,.patho-card,.fiche,.strate{page-break-inside:avoid;}.part-banner{-webkit-print-color-adjust:exact;}.err-accordion-body{display:block!important;}.err-toggle-all{display:none!important;}}
 @page{size:A4;margin:14mm;}
-@media(max-width:820px){.main{margin-left:0;padding:20px 16px;}.patho-body,.g2,.g3,.vig-grid,.ns-row,.quiz-assoc{grid-template-columns:1fr;}.glos{columns:1;}.semo-head-row,.semo-data-row{grid-template-columns:130px 1fr;}}
+@media(max-width:820px){.main{margin-left:0;padding:20px 16px;}.patho-body,.g2,.g3,.vig-grid,.ns-row,.quiz-assoc{grid-template-columns:1fr;}.glos{columns:1;}
+  .semo-head-row{display:none;}
+  .semo-data-row{display:flex;flex-direction:column;gap:5px;padding:12px 14px;}
+  .semo-data-row .semo-term{font-weight:800;color:var(--navy);font-size:13px;}
+  .semo-data-row .semo-def::before{content:"Définition — ";font-weight:700;color:var(--muted);}
+  .semo-data-row .semo-ex::before{content:"Exemple clinique — ";font-weight:700;color:var(--muted);}
+  .semo-data-row .semo-clin::before{content:"Orientation — ";font-weight:700;color:var(--muted);}
+}
+.semo-head-row,.semo-data-row{min-width:0;}
+.semo-head-row>*,.semo-data-row>*{min-width:0;overflow-wrap:break-word;word-break:break-word;}
 
 /* ── OBJECTIFS PÉDAGOGIQUES ── */
 .obj-block{background:var(--white);border-radius:var(--r);padding:18px 22px;margin:0 0 18px;border:1px solid var(--border);box-shadow:var(--sh);}
@@ -625,6 +649,7 @@ figure {
   <div class="nav-part-body" id="p0">
     <a href="#bienvenue-accueil" class="nav-link" style="background:rgba(22,33,62,.5);"><span class="nav-icon">👋</span>Bienvenue — Mode d'emploi</a>
     <a href="#mon-espace" class="nav-link" style="background:rgba(139,105,20,.3);"><span class="nav-icon">🗂️</span>Mon espace</a>
+    <a href="#quiz-hub" class="nav-link" style="background:rgba(108,52,131,.4);"><span class="nav-icon">🎯</span>Quiz — Centre de révision</a>
     <a href="#index-page" class="nav-link"><span class="nav-icon">📑</span>Table des matières</a>
     <a href="#mon-parcours" class="nav-link" style="background:rgba(45,106,79,.35);"><span class="nav-icon">🧭</span>Mon parcours de stage</a>
     <a href="#mode-terrain" class="nav-link" style="background:rgba(139,26,26,.35);"><span class="nav-icon">🚨</span>Mode Terrain — Accès rapide</a>
@@ -1203,6 +1228,16 @@ function baDemo(which){
   </div>
   <p style="font-size:11.5px;color:var(--muted);margin-bottom:16px;">Votre progression, vos favoris et vos notes — tout est sauvegardé automatiquement sur cet appareil.</p>
   <div id="mon-espace-content"><p class="me-empty">Chargement…</p></div>
+</section>
+
+<!-- ══ QUIZ — CENTRE DE RÉVISION ══ -->
+<section id="quiz-hub" style="background:linear-gradient(135deg,#4a1a6e,#6C3483);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
+  <div style="padding:28px 34px 18px;">
+    <span style="font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#e8d5f5;display:block;margin-bottom:10px;">🎯 Centre de révision</span>
+    <h2 style="font-family:var(--ff-title);font-size:clamp(22px,3.4vw,30px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:6px;">Tous les quiz au même endroit</h2>
+    <p style="font-size:12.5px;color:rgba(255,255,255,.6);">4 quiz du livret, votre score en direct, et une sélection de révision — automatique (vos questions les plus ratées) ou libre (vous choisissez le quiz).</p>
+  </div>
+  <div id="quiz-hub-content" style="padding:6px 34px 28px;"><p style="color:rgba(255,255,255,.5);font-size:11.5px;font-style:italic;">Chargement…</p></div>
 </section>
 
 <!-- ══ MON PARCOURS DE STAGE ══ -->
@@ -7603,6 +7638,7 @@ function updateScore(quiz) {
   const el = document.getElementById(`score-${quiz}`);
   if (el) el.textContent = `${st.answered}/${st.total}`;
   updateProgress();
+  renderQuizHub();
 }
 
 function updateProgress() {
@@ -7633,7 +7669,56 @@ function resetQuiz(quiz) {
   document.querySelectorAll(`[id^="fb-${prefix}q"]`).forEach(fb => fb.classList.remove('show','ok','ko'));
   clearQuizAnswers(quiz);
   updateProgress();
+  renderQuizHub();
 }
+
+/* ═══ QUIZ HUB — vue d'ensemble, sans dupliquer les quiz eux-mêmes ═══ */
+const QUIZ_META = {
+  semo:   { title: 'Sémiologie psychiatrique',            anchor: '#quiz-semo' },
+  patho:  { title: 'Pathologies psychiatriques',           anchor: '#quiz-patho' },
+  ttt:    { title: 'Traitements et pharmacologie',         anchor: '#quiz-ttt' },
+  fiches: { title: 'Fiches pratiques et situations cliniques', anchor: '#quiz-fiches' },
+};
+
+function renderQuizHub(){
+  const root = document.getElementById('quiz-hub-content');
+  if (!root) return;
+
+  let html = '<div class="qh-grid">';
+  Object.keys(QUIZ_META).forEach(id => {
+    const meta = QUIZ_META[id];
+    const st = quizState[id] || { answered: 0, total: 0 };
+    const pct = st.total > 0 ? Math.round(st.answered / st.total * 100) : 0;
+    html += '<a href="' + meta.anchor + '" class="qh-card">';
+    html += '<div class="qh-card-title">' + meta.title + '</div>';
+    html += '<div class="qh-card-bar"><div class="qh-card-bar-fill" style="width:' + pct + '%"></div></div>';
+    html += '<div class="qh-card-score">' + st.answered + '/' + st.total + ' répondues</div>';
+    html += '</a>';
+  });
+  html += '</div>';
+
+  const toReview = getQuestionsToReview();
+  html += '<div class="qh-review">';
+  html += '<h4>🔁 Révision automatique — vos questions les plus ratées</h4>';
+  if (toReview.length){
+    html += '<ul class="qh-review-list">';
+    toReview.slice(0, 5).forEach(item => {
+      const info = getQuestionInfo(item.quiz, item.qKey);
+      const anchor = info.id ? '#' + info.id : (QUIZ_META[item.quiz] ? QUIZ_META[item.quiz].anchor : '#quiz-hub');
+      html += '<li><a href="' + anchor + '">' + info.text.slice(0,80) + (info.text.length>80?'…':'') + '</a><span class="qh-wrong-badge">' + item.wrongCount + '×</span></li>';
+    });
+    html += '</ul>';
+  } else {
+    html += '<p class="qh-empty">Aucune question ratée pour l\'instant — bravo, ou pas encore commencé !</p>';
+  }
+  html += '<p class="qh-hint">Sélection automatique selon vos erreurs. Vous pouvez aussi choisir librement un quiz ci-dessus.</p>';
+  html += '</div>';
+
+  root.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', renderQuizHub);
+if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(renderQuizHub, 0); }
 
 /* Recalcule la barre de progression globale au chargement, une fois les réponses sauvegardées restaurées */
 document.addEventListener('DOMContentLoaded', updateProgress);
