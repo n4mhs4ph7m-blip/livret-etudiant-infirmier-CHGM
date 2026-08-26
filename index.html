@@ -14,6 +14,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:3px;}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
+}
 :root {
   --ink:#1C1F26;--navy:#16213E;--teal:#2D6A4F;--teal-l:#D8F3DC;
   --bord:#8B1A1A;--bord-l:#FDECEA;--gold:#8B6914;--gold-l:#FEF9E7;
@@ -27,6 +30,27 @@
   --r:10px;--r-lg:18px;
   --sh:0 2px 12px rgba(28,31,38,.07);--sh-md:0 4px 24px rgba(28,31,38,.1);
 }
+/* ═══ MODE SOMBRE ═══
+   Surfaces principales via variables CSS (couvre tout le contenu construit
+   avec var(--cream)/var(--white)/var(--warm)/var(--border)/var(--ink)/var(--muted)),
+   + correctifs ciblés pour les couleurs codées en dur les plus fréquentes du
+   contenu pédagogique existant, via sélecteurs d'attribut sur le style inline. */
+:root[data-theme="dark"]{
+  --bg:#0f141e;--white:#1a2432;--cream:#161f2b;--warm:#1c2634;
+  --border:#2c3a4d;--ink:#e7eaee;--muted:#9aa7b5;
+}
+:root[data-theme="dark"] body{background:var(--bg);color:var(--ink);}
+:root[data-theme="dark"] [style*="color:#344055"]{color:#c9d1db!important;}
+:root[data-theme="dark"] [style*="color:#16213E"]{color:#9fb3d9!important;}
+:root[data-theme="dark"] [style*="color:#6b1a1a"]{color:#e8a5a5!important;}
+:root[data-theme="dark"] [style*="color:#1e4d38"]{color:#a8d8bf!important;}
+:root[data-theme="dark"] [style*="background:#E3F2FD"]{background:#122a3d!important;}
+:root[data-theme="dark"] [style*="background:#FFF3E0"]{background:#3a2c12!important;}
+:root[data-theme="dark"] [style*="background:#F0EDE8"]{background:#1c2634!important;}
+:root[data-theme="dark"] [style*="background:#D8F3DC"]{background:#173324!important;}
+:root[data-theme="dark"] [style*="background:#FDECEA"]{background:#3a1414!important;}
+:root[data-theme="dark"] [style*="background:#FEF9E7"]{background:#33280a!important;}
+:root[data-theme="dark"] .quiz-opt,:root[data-theme="dark"] .quiz-vf-btn{color:#e7eaee;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;font-size:15px;}
 body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-height:1.68;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -125,6 +149,12 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-heigh
 .me-quick-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
 .me-quick-btn{font-size:11px;color:var(--navy);background:var(--warm);border:1px solid var(--border);border-radius:20px;padding:7px 13px;cursor:pointer;font-weight:600;}
 .me-quick-btn:hover{background:var(--border);}
+.me-theme-row,.me-data-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.me-theme-btn{font-size:11.5px;color:var(--navy);background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:7px 14px;cursor:pointer;font-weight:600;}
+.me-theme-btn.me-theme-active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.me-reset-btn{font-size:11px;color:var(--bord);background:var(--bord-l);border:1px solid var(--bord);border-radius:20px;padding:7px 14px;cursor:pointer;font-weight:600;margin-top:4px;}
+.me-reset-btn:hover{background:var(--bord);color:#fff;}
+.me-wrong-badge{font-size:9.5px;color:var(--bord);background:var(--bord-l);border-radius:10px;padding:2px 7px;font-weight:700;flex-shrink:0;}
 @media(max-width:820px){.me-stats{grid-template-columns:repeat(2,1fr);}}
 .nav-icon{font-size:12px;opacity:.75;flex-shrink:0;}
 .nav-qbadge{margin-left:auto;font-size:8.5px;font-weight:700;background:var(--gold);color:#fff;padding:1px 6px;border-radius:20px;flex-shrink:0;}
@@ -7451,15 +7481,22 @@ const assocState = {};
 function saveQuizAnswer(quiz, qKey, val, isOk){
   const all = LivretStore.get('quiz', {});
   if (!all[quiz]) all[quiz] = {};
-  all[quiz][qKey] = { val, isOk, ts: Date.now() };
+  const prev = all[quiz][qKey] || { wrongCount: 0 };
+  all[quiz][qKey] = { answered: true, val, isOk, ts: Date.now(), wrongCount: isOk ? (prev.wrongCount || 0) : (prev.wrongCount || 0) + 1 };
   LivretStore.set('quiz', all);
 }
 function getQuizAnswer(quiz, qKey){
-  return LivretStore.get(`quiz.${quiz}.${qKey}`, null);
+  const rec = LivretStore.get(`quiz.${quiz}.${qKey}`, null);
+  return (rec && rec.answered) ? rec : null;
 }
 function clearQuizAnswers(quiz){
+  // Repasse les questions à "non répondu" pour permettre de refaire le quiz,
+  // mais conserve le compteur d'erreurs (wrongCount) pour la liste
+  // "Mes questions à revoir" — l'historique de difficulté n'est pas perdu.
   const all = LivretStore.get('quiz', {});
-  delete all[quiz];
+  if (all[quiz]){
+    Object.keys(all[quiz]).forEach(k => { all[quiz][k].answered = false; });
+  }
   LivretStore.set('quiz', all);
 }
 
@@ -7645,6 +7682,34 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 /* ═══════════════════════════════════════════════════════════
    MON ESPACE — états de section, tableau de bord, favoris, notes
    ═══════════════════════════════════════════════════════════ */
+/* --- Thème clair / sombre / auto --- */
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+}
+function initTheme(){
+  const stored = LivretStore.get('settings.theme', 'system');
+  if (stored === 'system'){
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  } else {
+    applyTheme(stored);
+  }
+}
+function setTheme(theme){
+  LivretStore.set('settings.theme', theme);
+  initTheme();
+  renderMonEspace();
+}
+if (window.matchMedia){
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(){
+      if (LivretStore.get('settings.theme', 'system') === 'system') initTheme();
+    });
+  } catch(e){}
+}
+document.addEventListener('DOMContentLoaded', initTheme);
+if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(initTheme, 0); }
+
 var lastTrackedSectionId = null;
 
 function getSectionTitle(id){
@@ -7725,6 +7790,71 @@ function removeNote(noteId){
   renderMonEspace();
 }
 
+/* --- Export / Import / Réinitialisation --- */
+function exportUserData(){
+  const json = LivretStore.exportJSON();
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = 'livret-psy-chgm-donnees-' + date + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function triggerImportFile(){
+  const input = document.getElementById('me-import-input');
+  if (input) input.click();
+}
+function handleImportFile(event){
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(){
+    const ok = LivretStore.importJSON(reader.result);
+    if (ok){
+      alert('Données importées avec succès. La page va se recharger.');
+      location.reload();
+    } else {
+      alert('Le fichier sélectionné n\'est pas un export valide de ce livret.');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = ''; // permet de réimporter le même fichier plus tard si besoin
+}
+function confirmResetAllData(){
+  if (!confirm('Réinitialiser toutes vos données (carnet, favoris, notes, quiz) ? Cette action est irréversible. Pensez à exporter une sauvegarde avant si besoin.')) return;
+  LivretStore.reset();
+  alert('Données réinitialisées. La page va se recharger.');
+  location.reload();
+}
+
+/* --- Mes questions à revoir (base de la répétition espacée) --- */
+function getQuestionInfo(quizId, qKey){
+  const parts = qKey.split('-');
+  const type = parts[0], qNum = parts.slice(1).join('-');
+  const sel = type === 'qcm' ? '.quiz-options' : '.quiz-vf';
+  const el = document.querySelector(sel + '[data-quiz="' + quizId + '"][data-q="' + qNum + '"]');
+  if (!el) return { id: null, text: 'Question ' + qNum };
+  const container = el.closest('.quiz-q');
+  const textEl = container ? container.querySelector('.quiz-q-text') : null;
+  return { id: container ? container.id : null, text: textEl ? textEl.textContent.trim() : ('Question ' + qNum) };
+}
+function getQuestionsToReview(){
+  const quiz = LivretStore.get('quiz', {});
+  const items = [];
+  Object.keys(quiz).forEach(qz => {
+    Object.keys(quiz[qz]).forEach(qKey => {
+      const rec = quiz[qz][qKey];
+      if (rec && rec.wrongCount > 0) items.push({ quiz: qz, qKey: qKey, wrongCount: rec.wrongCount, lastOk: !!rec.isOk });
+    });
+  });
+  items.sort((a,b) => b.wrongCount - a.wrongCount);
+  return items;
+}
+
 /* --- Tableau de bord --- */
 function renderMonEspace(){
   const root = document.getElementById('mon-espace-content');
@@ -7772,6 +7902,19 @@ function renderMonEspace(){
     html += '</ul></div>';
   }
 
+  const toReview = getQuestionsToReview();
+  if (toReview.length){
+    html += '<div class="me-block"><h4>🔁 Mes questions à revoir (' + toReview.length + ')</h4>';
+    html += '<ul class="me-list">';
+    toReview.slice(0, 6).forEach(item => {
+      const info = getQuestionInfo(item.quiz, item.qKey);
+      const anchor = info.id ? '#' + info.id : '#quiz-' + item.quiz;
+      const badge = item.wrongCount > 1 ? ' <span class="me-wrong-badge">' + item.wrongCount + '× ratée</span>' : '';
+      html += '<li><a href="' + anchor + '">' + info.text.slice(0, 70) + (info.text.length > 70 ? '…' : '') + '</a>' + badge + '</li>';
+    });
+    html += '</ul></div>';
+  }
+
   html += '<div class="me-block"><h4>⭐ Mes favoris</h4>';
   html += '<button type="button" class="me-add-btn" onclick="addFavoriCurrentSection()">+ Ajouter la section en cours</button>';
   if (favoris.length){
@@ -7804,6 +7947,26 @@ function renderMonEspace(){
   } else {
     html += '<p class="me-empty">Rien en cours — commencez par « Mon parcours de stage ».</p>';
   }
+  html += '</div>';
+
+  const currentTheme = LivretStore.get('settings.theme', 'system');
+  html += '<div class="me-block"><h4>🎨 Affichage</h4>';
+  html += '<div class="me-theme-row">';
+  ['system','light','dark'].forEach(t => {
+    const label = t === 'system' ? '⚙️ Auto' : (t === 'light' ? '☀️ Clair' : '🌙 Sombre');
+    const active = t === currentTheme ? ' me-theme-active' : '';
+    html += '<button type="button" class="me-theme-btn' + active + '" onclick="setTheme(\'' + t + '\')">' + label + '</button>';
+  });
+  html += '</div></div>';
+
+  html += '<div class="me-block"><h4>⚙️ Mes données</h4>';
+  html += '<div class="me-data-row">';
+  html += '<button type="button" class="me-add-btn" onclick="exportUserData()">⬇️ Exporter mes données</button>';
+  html += '<button type="button" class="me-add-btn" onclick="triggerImportFile()">⬆️ Importer</button>';
+  html += '</div>';
+  html += '<input type="file" id="me-import-input" accept="application/json" style="display:none" onchange="handleImportFile(event)">';
+  html += '<button type="button" class="me-reset-btn" onclick="confirmResetAllData()">🗑️ Réinitialiser toutes mes données</button>';
+  html += '<p class="me-empty" style="margin-top:6px;">Vos données restent uniquement sur cet appareil. L\'export produit un fichier .json que vous pouvez sauvegarder ou envoyer à votre tuteur.</p>';
   html += '</div>';
 
   root.innerHTML = html;
