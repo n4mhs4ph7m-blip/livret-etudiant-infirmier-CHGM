@@ -101,6 +101,31 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-heigh
 .ca-domain-ects{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;}
 .ca-domain .tw{margin:0;border-radius:0;}
 .ca-domain table td{font-size:12px;line-height:1.5;vertical-align:top;}
+.me-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.me-stat{background:var(--warm);border-radius:10px;padding:12px 10px;text-align:center;}
+.me-stat-num{display:block;font-family:var(--ff-title);font-size:22px;font-weight:700;color:var(--navy);}
+.me-stat-lbl{display:block;font-size:9.5px;color:var(--muted);margin-top:2px;}
+.me-resume-btn{display:block;background:var(--teal);color:#fff;text-decoration:none;padding:12px 16px;border-radius:10px;font-size:12.5px;font-weight:600;margin-bottom:18px;text-align:center;}
+.me-resume-btn em{font-style:normal;font-weight:700;}
+.me-block{margin-bottom:18px;}
+.me-block h4{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.me-add-btn{font-size:11px;color:var(--teal);background:var(--sage-l);border:1px solid var(--teal);border-radius:20px;padding:6px 14px;cursor:pointer;font-weight:600;margin-bottom:8px;}
+.me-add-btn:hover{background:var(--teal);color:#fff;}
+.me-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+.me-list li{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:8px 10px;}
+.me-list a{font-size:12px;color:var(--navy);text-decoration:none;font-weight:600;flex:1;}
+.me-list a:hover{text-decoration:underline;}
+.me-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:2px 6px;flex-shrink:0;}
+.me-del:hover{color:var(--bord);}
+.me-notes-list li{align-items:flex-start;}
+.me-note-body{flex:1;cursor:pointer;display:flex;flex-direction:column;gap:2px;}
+.me-note-section{font-size:9.5px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.05em;}
+.me-note-text{font-size:12px;color:#344055;line-height:1.4;}
+.me-empty{font-size:11.5px;color:var(--muted);font-style:italic;}
+.me-quick-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.me-quick-btn{font-size:11px;color:var(--navy);background:var(--warm);border:1px solid var(--border);border-radius:20px;padding:7px 13px;cursor:pointer;font-weight:600;}
+.me-quick-btn:hover{background:var(--border);}
+@media(max-width:820px){.me-stats{grid-template-columns:repeat(2,1fr);}}
 .nav-icon{font-size:12px;opacity:.75;flex-shrink:0;}
 .nav-qbadge{margin-left:auto;font-size:8.5px;font-weight:700;background:var(--gold);color:#fff;padding:1px 6px;border-radius:20px;flex-shrink:0;}
 .strate-legend{margin:14px 20px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);}
@@ -569,6 +594,7 @@ figure {
   </div>
   <div class="nav-part-body" id="p0">
     <a href="#bienvenue-accueil" class="nav-link" style="background:rgba(22,33,62,.5);"><span class="nav-icon">👋</span>Bienvenue — Mode d'emploi</a>
+    <a href="#mon-espace" class="nav-link" style="background:rgba(139,105,20,.3);"><span class="nav-icon">🗂️</span>Mon espace</a>
     <a href="#index-page" class="nav-link"><span class="nav-icon">📑</span>Table des matières</a>
     <a href="#mon-parcours" class="nav-link" style="background:rgba(45,106,79,.35);"><span class="nav-icon">🧭</span>Mon parcours de stage</a>
     <a href="#mode-terrain" class="nav-link" style="background:rgba(139,26,26,.35);"><span class="nav-icon">🚨</span>Mode Terrain — Accès rapide</a>
@@ -1138,6 +1164,16 @@ function baDemo(which){
 }
 </script>
 <!-- ══ BIENVENUE — fin ══ -->
+
+<!-- ══ MON ESPACE — tableau de bord personnel ══ -->
+<section id="mon-espace" style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 30px;margin-bottom:52px;box-shadow:var(--sh);">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+    <span style="font-size:22px;">🗂️</span>
+    <h2 style="font-family:var(--ff-title);font-size:20px;font-weight:700;color:var(--navy);margin:0;">Mon espace</h2>
+  </div>
+  <p style="font-size:11.5px;color:var(--muted);margin-bottom:16px;">Votre progression, vos favoris et vos notes — tout est sauvegardé automatiquement sur cet appareil.</p>
+  <div id="mon-espace-content"><p class="me-empty">Chargement…</p></div>
+</section>
 
 <!-- ══ MON PARCOURS DE STAGE ══ -->
 <section id="mon-parcours" style="background:linear-gradient(135deg,#16213E,#1e3a6e);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
@@ -7533,10 +7569,10 @@ function updateScore(quiz) {
 }
 
 function updateProgress() {
-  let total = 0, answered = 0;
-  Object.values(quizState).forEach(s => { total += s.total; answered += s.answered; });
-  const bar = document.getElementById('progressBar');
-  if (bar) bar.style.width = (total > 0 ? answered / total * 100 : 0) + '%';
+  // Remarque : #progressBar (barre de la nav latérale) est réservé au suivi de
+  // lecture/défilement (voir IntersectionObserver plus bas) pour éviter toute
+  // collision avec la progression des quiz, qui est affichée séparément
+  // (scores par quiz + tableau de bord "Mon espace").
 }
 
 function resetQuiz(quiz) {
@@ -7606,7 +7642,177 @@ function applyAccessibilityFixes(){
 document.addEventListener('DOMContentLoaded', applyAccessibilityFixes);
 if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(applyAccessibilityFixes, 0); }
 
-/* ═══ NAV ACCORDÉON & RECHERCHE ═══ */
+/* ═══════════════════════════════════════════════════════════
+   MON ESPACE — états de section, tableau de bord, favoris, notes
+   ═══════════════════════════════════════════════════════════ */
+var lastTrackedSectionId = null;
+
+function getSectionTitle(id){
+  const el = document.getElementById(id);
+  if (!el) return id;
+  const h = el.querySelector('h2');
+  return h ? h.textContent.trim() : id;
+}
+
+/* Appelé par l'observateur de défilement existant à chaque changement de section visible */
+function trackSectionVisit(id){
+  if (id === 'mon-espace' || id === 'bienvenue-accueil') return; // pages d'interface, pas du contenu pédagogique
+  const sections = LivretStore.get('sections', {});
+  if (lastTrackedSectionId && lastTrackedSectionId !== id){
+    const prev = sections[lastTrackedSectionId];
+    if (prev && prev.state === 'en_cours') prev.state = 'termine';
+  }
+  const cur = sections[id] || {};
+  if (!cur.state || cur.state === 'non_commence') cur.state = 'en_cours';
+  cur.lastVisit = Date.now();
+  sections[id] = cur;
+  LivretStore.set('sections', sections);
+  LivretStore.set('lastSection', id);
+  lastTrackedSectionId = id;
+  renderMonEspace();
+}
+
+/* --- Marquage manuel de l'état (à revoir / maîtrisé) --- */
+function setSectionState(state){
+  if (!lastTrackedSectionId) return;
+  const sections = LivretStore.get('sections', {});
+  const cur = sections[lastTrackedSectionId] || {};
+  cur.state = state;
+  sections[lastTrackedSectionId] = cur;
+  LivretStore.set('sections', sections);
+  renderMonEspace();
+}
+
+/* --- Favoris --- */
+function addFavoriCurrentSection(){
+  if (!lastTrackedSectionId) return;
+  const favoris = LivretStore.get('favoris', []);
+  if (!favoris.includes(lastTrackedSectionId)) favoris.push(lastTrackedSectionId);
+  LivretStore.set('favoris', favoris);
+  renderMonEspace();
+}
+function removeFavori(id){
+  const favoris = LivretStore.get('favoris', []).filter(f => f !== id);
+  LivretStore.set('favoris', favoris);
+  renderMonEspace();
+}
+
+/* --- Notes personnelles --- */
+function addNoteCurrentSection(){
+  if (!lastTrackedSectionId) return;
+  const text = prompt('Votre note pour « ' + getSectionTitle(lastTrackedSectionId) + ' » :');
+  if (!text || !text.trim()) return;
+  const notes = LivretStore.get('notes', []);
+  notes.push({ id: 'n' + Date.now(), sectionId: lastTrackedSectionId, text: text.trim(), ts: Date.now() });
+  LivretStore.set('notes', notes);
+  renderMonEspace();
+}
+function editNote(noteId){
+  const notes = LivretStore.get('notes', []);
+  const note = notes.find(n => n.id === noteId);
+  if (!note) return;
+  const text = prompt('Modifier la note :', note.text);
+  if (text === null) return;
+  if (!text.trim()) { removeNote(noteId); return; }
+  note.text = text.trim();
+  note.ts = Date.now();
+  LivretStore.set('notes', notes);
+  renderMonEspace();
+}
+function removeNote(noteId){
+  const notes = LivretStore.get('notes', []).filter(n => n.id !== noteId);
+  LivretStore.set('notes', notes);
+  renderMonEspace();
+}
+
+/* --- Tableau de bord --- */
+function renderMonEspace(){
+  const root = document.getElementById('mon-espace-content');
+  if (!root) return;
+
+  const sections = LivretStore.get('sections', {});
+  const ids = Object.keys(sections);
+  const totalSections = document.querySelectorAll('main section[id]').length;
+  const termineIds = ids.filter(k => sections[k].state === 'termine');
+  const enCoursIds = ids.filter(k => sections[k].state === 'en_cours');
+  const aRevoirIds = ids.filter(k => sections[k].state === 'a_revoir');
+  const maitriseIds = ids.filter(k => sections[k].state === 'maitrise');
+
+  const quiz = LivretStore.get('quiz', {});
+  let totalQ = 0, correctQ = 0;
+  Object.values(quiz).forEach(qz => Object.values(qz).forEach(a => { totalQ++; if (a.isOk) correctQ++; }));
+  const quizAvg = totalQ > 0 ? Math.round(correctQ / totalQ * 100) : null;
+
+  const lastSection = LivretStore.get('lastSection', null);
+  const favoris = LivretStore.get('favoris', []);
+  const notes = LivretStore.get('notes', []);
+  const pct = totalSections > 0 ? Math.round((termineIds.length + enCoursIds.length) / totalSections * 100) : 0;
+
+  let html = '';
+
+  html += '<div class="me-stats">';
+  html += '<div class="me-stat"><span class="me-stat-num">' + pct + '%</span><span class="me-stat-lbl">du livret parcouru</span></div>';
+  html += '<div class="me-stat"><span class="me-stat-num">' + termineIds.length + '</span><span class="me-stat-lbl">sections terminées</span></div>';
+  html += '<div class="me-stat"><span class="me-stat-num">' + (quizAvg !== null ? quizAvg + '%' : '—') + '</span><span class="me-stat-lbl">score moyen aux quiz</span></div>';
+  html += '<div class="me-stat"><span class="me-stat-num">' + maitriseIds.length + '</span><span class="me-stat-lbl">compétences maîtrisées</span></div>';
+  html += '</div>';
+
+  if (lastSection){
+    html += '<a href="#' + lastSection + '" class="me-resume-btn">↻ Reprendre où j\'en étais — <em>' + getSectionTitle(lastSection) + '</em></a>';
+  }
+
+  html += '<div class="me-quick-actions">';
+  html += '<button type="button" class="me-quick-btn" onclick="setSectionState(\'a_revoir\')">🟠 Marquer la section en cours « à revoir »</button>';
+  html += '<button type="button" class="me-quick-btn" onclick="setSectionState(\'maitrise\')">🟢 Marquer « maîtrisée »</button>';
+  html += '</div>';
+
+  if (aRevoirIds.length){
+    html += '<div class="me-block"><h4>🟠 Notions à revoir</h4><ul class="me-list">';
+    aRevoirIds.forEach(id => { html += '<li><a href="#' + id + '">' + getSectionTitle(id) + '</a></li>'; });
+    html += '</ul></div>';
+  }
+
+  html += '<div class="me-block"><h4>⭐ Mes favoris</h4>';
+  html += '<button type="button" class="me-add-btn" onclick="addFavoriCurrentSection()">+ Ajouter la section en cours</button>';
+  if (favoris.length){
+    html += '<ul class="me-list">';
+    favoris.forEach(id => { html += '<li><a href="#' + id + '">' + getSectionTitle(id) + '</a><button type="button" class="me-del" onclick="removeFavori(\'' + id + '\')" aria-label="Retirer des favoris">✕</button></li>'; });
+    html += '</ul>';
+  } else {
+    html += '<p class="me-empty">Aucun favori pour l\'instant.</p>';
+  }
+  html += '</div>';
+
+  html += '<div class="me-block"><h4>📝 Mes notes</h4>';
+  html += '<button type="button" class="me-add-btn" onclick="addNoteCurrentSection()">+ Nouvelle note sur la section en cours</button>';
+  if (notes.length){
+    html += '<ul class="me-list me-notes-list">';
+    notes.slice().reverse().forEach(n => {
+      html += '<li><div class="me-note-body" onclick="editNote(\'' + n.id + '\')"><span class="me-note-section">' + getSectionTitle(n.sectionId) + '</span><span class="me-note-text">' + n.text.replace(/</g,'&lt;') + '</span></div><button type="button" class="me-del" onclick="removeNote(\'' + n.id + '\')" aria-label="Supprimer la note">✕</button></li>';
+    });
+    html += '</ul>';
+  } else {
+    html += '<p class="me-empty">Aucune note pour l\'instant.</p>';
+  }
+  html += '</div>';
+
+  html += '<div class="me-block"><h4>📚 Sections en cours (' + enCoursIds.length + ')</h4>';
+  if (enCoursIds.length){
+    html += '<ul class="me-list">';
+    enCoursIds.slice(0,8).forEach(id => { html += '<li><a href="#' + id + '">' + getSectionTitle(id) + '</a></li>'; });
+    html += '</ul>';
+  } else {
+    html += '<p class="me-empty">Rien en cours — commencez par « Mon parcours de stage ».</p>';
+  }
+  html += '</div>';
+
+  root.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', renderMonEspace);
+if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(renderMonEspace, 0); }
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
   /* --- ACCORDÉON --- */
@@ -7668,13 +7874,15 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
       var al = document.querySelector('.nav-link[href="#' + id + '"]');
       if (al) al.classList.add('active');
-      /* Barre de progression */
+      /* Barre de progression (lecture/défilement) */
       var secs = document.querySelectorAll('section[id]');
       var idx = Array.from(secs).findIndex(function(s) { return s.id === id; });
       if (idx >= 0) {
         var bar = document.getElementById('progressBar');
         if (bar) bar.style.width = Math.round((idx+1)/secs.length*100) + '%';
       }
+      /* Suivi de l'état pédagogique de la section (Phase 3) */
+      trackSectionVisit(id);
     });
   }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
 
