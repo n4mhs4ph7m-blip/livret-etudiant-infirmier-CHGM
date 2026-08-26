@@ -13,6 +13,7 @@
 <title>Livret de Formation en Psychiatrie — CH Gérard Marchant</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:3px;}
 :root {
   --ink:#1C1F26;--navy:#16213E;--teal:#2D6A4F;--teal-l:#D8F3DC;
   --bord:#8B1A1A;--bord-l:#FDECEA;--gold:#8B6914;--gold-l:#FEF9E7;
@@ -567,6 +568,7 @@ figure {
     <span class="nav-part-chevron">▾</span>
   </div>
   <div class="nav-part-body" id="p0">
+    <a href="#bienvenue-accueil" class="nav-link" style="background:rgba(22,33,62,.5);"><span class="nav-icon">👋</span>Bienvenue — Mode d'emploi</a>
     <a href="#index-page" class="nav-link"><span class="nav-icon">📑</span>Table des matières</a>
     <a href="#mon-parcours" class="nav-link" style="background:rgba(45,106,79,.35);"><span class="nav-icon">🧭</span>Mon parcours de stage</a>
     <a href="#mode-terrain" class="nav-link" style="background:rgba(139,26,26,.35);"><span class="nav-icon">🚨</span>Mode Terrain — Accès rapide</a>
@@ -1025,6 +1027,117 @@ figure {
   <div class="leg-item"><div class="leg-sw" style="background:#8B1A1A">3</div><strong>Expert</strong> — 3e année +</div>
   <div class="leg-item" style="margin-left:auto;"><div class="leg-sw" style="background:#8B6914">Q</div><strong>Quiz</strong> autoévaluation</div>
 </div>
+
+<!-- ══ BIENVENUE — ORIENTATION RAPIDE (établissement + mode d'emploi de l'app) ══ -->
+<section id="bienvenue-accueil" style="background:linear-gradient(135deg,#16213E,#1e3a6e);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
+  <div style="padding:28px 34px 18px;">
+    <span style="font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-l);display:block;margin-bottom:10px;">👋 Avant de commencer</span>
+    <h2 style="font-family:var(--ff-title);font-size:clamp(24px,3.6vw,32px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:6px;">Bienvenue — le service et l'application en 2 minutes</h2>
+    <p style="font-size:12.5px;color:rgba(255,255,255,.55);">Un rapide tour d'horizon avant de vous plonger dans le contenu clinique. Vous pouvez revenir ici à tout moment.</p>
+  </div>
+
+  <!-- Bloc 1 : où êtes-vous -->
+  <div style="padding:6px 34px 24px;">
+    <div style="font-size:11px;font-weight:800;color:var(--gold-l);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">📍 Où vous êtes</div>
+    <div class="ba-facts">
+      <div class="ba-fact"><span class="ba-fact-icon">🏥</span><span class="ba-fact-txt"><strong>Centre Hospitalier Gérard Marchant</strong><br>Établissement public de santé mentale, Toulouse</span></div>
+      <div class="ba-fact"><span class="ba-fact-icon">🧩</span><span class="ba-fact-txt"><strong>Organisé en pôles</strong><br>Intra-hospitalier, ambulatoire (CMP/CATTP/HDJ), spécialités</span></div>
+      <div class="ba-fact"><span class="ba-fact-icon">📅</span><span class="ba-fact-txt"><strong>Stage psychiatrie</strong><br>Minimum légal : 5 semaines (arrêté du 20/02/2026)</span></div>
+    </div>
+    <a href="#etablissement" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;color:var(--gold-l);text-decoration:none;font-weight:600;">Découvrir l'établissement en détail →</a>
+  </div>
+
+  <!-- Bloc 2 : mode d'emploi interactif de l'app -->
+  <div style="padding:20px 34px 28px;background:rgba(0,0,0,.15);">
+    <div style="font-size:11px;font-weight:800;color:var(--teal-l);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">📱 Comment utiliser ce livret</div>
+    <p style="font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:14px;">Touchez une carte pour découvrir la fonctionnalité — elle vous y emmène directement.</p>
+    <div class="ba-tuto-grid">
+
+      <div class="ba-tuto-card" onclick="baDemo('menu')">
+        <div class="ba-tuto-icon">☰</div>
+        <div class="ba-tuto-title">Le menu</div>
+        <div class="ba-tuto-desc">Tout le sommaire du livret, organisé par thème. Sur iPhone, bouton "Menu" en bas à droite.</div>
+      </div>
+
+      <div class="ba-tuto-card" onclick="baDemo('search')">
+        <div class="ba-tuto-icon">🔍</div>
+        <div class="ba-tuto-title">La recherche</div>
+        <div class="ba-tuto-desc">Bouton loupe (à gauche sur mobile). Tapez un mot-clé, un extrait surligné vous mène directement au bon endroit.</div>
+      </div>
+
+      <div class="ba-tuto-card" onclick="baDemo('terrain')">
+        <div class="ba-tuto-icon">🚨</div>
+        <div class="ba-tuto-title">Mode Terrain</div>
+        <div class="ba-tuto-desc">11 fiches ultra-courtes pour une situation clinique en temps réel. Épinglé tout en haut du menu.</div>
+      </div>
+
+      <div class="ba-tuto-card" onclick="baDemo('parcours')">
+        <div class="ba-tuto-icon">🧭</div>
+        <div class="ba-tuto-title">Mon parcours</div>
+        <div class="ba-tuto-desc">Un fil conducteur en 9 étapes, du premier jour au bilan final, avec objectifs et critères de progression.</div>
+      </div>
+
+      <div class="ba-tuto-card" onclick="baDemo('carnet')">
+        <div class="ba-tuto-icon">📋</div>
+        <div class="ba-tuto-title">Carnet de progression</div>
+        <div class="ba-tuto-desc">Suivez votre autonomie sur chaque compétence (🔵🟡🟠🟢). Sauvegardé automatiquement sur votre téléphone.</div>
+      </div>
+
+      <div class="ba-tuto-card" onclick="baDemo('offline')">
+        <div class="ba-tuto-icon">📴</div>
+        <div class="ba-tuto-title">Hors connexion</div>
+        <div class="ba-tuto-desc">Une fois ouvert avec le réseau, tout le livret reste accessible en mode avion — utile en unité fermée.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.ba-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
+.ba-fact{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;}
+.ba-fact-icon{font-size:18px;flex-shrink:0;}
+.ba-fact-txt{font-size:12px;color:rgba(255,255,255,.85);line-height:1.4;}
+.ba-fact-txt strong{display:block;color:#fff;font-size:12.5px;margin-bottom:2px;}
+.ba-tuto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.ba-tuto-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;cursor:pointer;transition:background .15s,transform .15s;}
+.ba-tuto-card:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);}
+.ba-tuto-card:active{transform:scale(.97);}
+.ba-tuto-icon{font-size:22px;margin-bottom:6px;}
+.ba-tuto-title{font-family:var(--ff-title);font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;}
+.ba-tuto-desc{font-size:10.5px;color:rgba(255,255,255,.55);line-height:1.45;}
+</style>
+
+<script>
+function baDemo(which){
+  switch(which){
+    case 'menu': {
+      const btn = document.getElementById('btn-menu');
+      if (btn && getComputedStyle(btn).display !== 'none') { btn.click(); }
+      else { window.scrollTo({ top: 0, behavior: 'smooth' }); alert('Sur grand écran, le menu est visible en permanence à gauche.'); }
+      break;
+    }
+    case 'search': {
+      const fab = document.getElementById('search-fab');
+      if (fab) fab.click();
+      break;
+    }
+    case 'terrain':
+      document.getElementById('mode-terrain')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      break;
+    case 'parcours':
+      document.getElementById('mon-parcours')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      break;
+    case 'carnet':
+      document.getElementById('carnet-progression')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      break;
+    case 'offline':
+      alert('Astuce : ouvrez le livret une première fois avec le Wi-Fi ou la 4G actifs. Il reste ensuite consultable même en mode avion.');
+      break;
+  }
+}
+</script>
+<!-- ══ BIENVENUE — fin ══ -->
 
 <!-- ══ MON PARCOURS DE STAGE ══ -->
 <section id="mon-parcours" style="background:linear-gradient(135deg,#16213E,#1e3a6e);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
@@ -7098,18 +7211,87 @@ id="addictions" style="margin-bottom:0;">
 
 <script>
 
-/* ═══ CARNET DE PROGRESSION — 4 niveaux + sauvegarde locale ═══ */
-const CARNET_LEVELS = ['·', '🔵', '🟡', '🟠', '🟢'];
-const CARNET_STORAGE_KEY = 'livret-psy-chgm-carnet-v1';
+/* ═══════════════════════════════════════════════════════════
+   MODULE DE STOCKAGE UNIFIÉ — LivretStore
+   Un seul objet JSON versionné dans localStorage, remplaçant
+   les clés éparpillées. Migration automatique de l'ancien
+   carnet (clé "livret-psy-chgm-carnet-v1") si présent.
+   ═══════════════════════════════════════════════════════════ */
+const LivretStore = (function(){
+  const KEY = 'livret-psy-chgm-store-v1';
+  const LEGACY_CARNET_KEY = 'livret-psy-chgm-carnet-v1';
+  let cache = null;
 
-function loadCarnetState(){
-  try {
-    return JSON.parse(localStorage.getItem(CARNET_STORAGE_KEY) || '{}');
-  } catch(e){ return {}; }
-}
-function saveCarnetState(state){
-  try { localStorage.setItem(CARNET_STORAGE_KEY, JSON.stringify(state)); } catch(e){}
-}
+  function defaults(){
+    return { version: 1, carnet: {}, quiz: {}, favoris: [], notes: [], lastSection: null, settings: {} };
+  }
+
+  function load(){
+    if (cache) return cache;
+    let data = null;
+    try { data = JSON.parse(localStorage.getItem(KEY)); } catch(e){}
+    let migrated = false;
+    if (!data){
+      data = defaults();
+      // Migration ponctuelle depuis l'ancienne clé du carnet (v1)
+      try {
+        const legacy = JSON.parse(localStorage.getItem(LEGACY_CARNET_KEY) || 'null');
+        if (legacy && Object.keys(legacy).length){ data.carnet = legacy; migrated = true; }
+      } catch(e){}
+    }
+    // Garantit que toutes les clés attendues existent, même si le JSON stocké est partiel
+    data = Object.assign(defaults(), data);
+    cache = data;
+    if (migrated) save(); // fige immédiatement la migration, sans attendre une prochaine modification
+    return data;
+  }
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(cache)); } catch(e){}
+  }
+
+  function get(path, fallback){
+    const d = load();
+    const val = path.split('.').reduce((o,k) => (o && o[k] !== undefined) ? o[k] : undefined, d);
+    return val !== undefined ? val : fallback;
+  }
+
+  function set(path, value){
+    const d = load();
+    const keys = path.split('.');
+    let obj = d;
+    for (let i = 0; i < keys.length - 1; i++){
+      if (!obj[keys[i]] || typeof obj[keys[i]] !== 'object') obj[keys[i]] = {};
+      obj = obj[keys[i]];
+    }
+    obj[keys[keys.length - 1]] = value;
+    save();
+  }
+
+  function exportJSON(){
+    return JSON.stringify(load(), null, 2);
+  }
+
+  function importJSON(str){
+    try {
+      const parsed = JSON.parse(str);
+      cache = Object.assign(defaults(), parsed);
+      save();
+      return true;
+    } catch(e){ return false; }
+  }
+
+  function reset(){
+    cache = defaults();
+    save();
+  }
+
+  return { get, set, exportJSON, importJSON, reset };
+})();
+
+/* ═══ CARNET DE PROGRESSION — 4 niveaux, sur le stockage unifié ═══ */
+const CARNET_LEVELS = ['·', '🔵', '🟡', '🟠', '🟢'];
+
 function applyCarnetLevel(el, level){
   el.dataset.level = level;
   const check = el.querySelector('.carnet-check');
@@ -7121,16 +7303,16 @@ function cycleCarnetLevel(el){
   applyCarnetLevel(el, next);
   const skill = el.dataset.skill;
   if (skill){
-    const state = loadCarnetState();
-    state[skill] = next;
-    saveCarnetState(state);
+    const carnet = LivretStore.get('carnet', {});
+    carnet[skill] = next;
+    LivretStore.set('carnet', carnet);
   }
   updateCarnetProgress();
 }
 function restoreCarnetState(){
-  const state = loadCarnetState();
+  const carnet = LivretStore.get('carnet', {});
   document.querySelectorAll('.carnet-item[data-skill]').forEach(el => {
-    const level = state[el.dataset.skill] || 0;
+    const level = carnet[el.dataset.skill] || 0;
     applyCarnetLevel(el, level);
   });
   updateCarnetProgress();
@@ -7152,6 +7334,7 @@ function updateCarnetProgress() {
 document.addEventListener('DOMContentLoaded', restoreCarnetState);
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
   setTimeout(restoreCarnetState, 0);
+
 }
 
 /* ═══ ACCORDÉONS — 50 ERREURS FRÉQUENTES ═══ */
@@ -7220,7 +7403,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* ═══ QUIZ ENGINE ═══ */
+/* ═══ QUIZ ENGINE — avec persistance sur le stockage unifié ═══ */
 const quizState = {
   semo:   { answered: 0, total: 6 },
   patho:  { answered: 0, total: 6 },
@@ -7229,21 +7412,46 @@ const quizState = {
 };
 const assocState = {};
 
+function saveQuizAnswer(quiz, qKey, val, isOk){
+  const all = LivretStore.get('quiz', {});
+  if (!all[quiz]) all[quiz] = {};
+  all[quiz][qKey] = { val, isOk, ts: Date.now() };
+  LivretStore.set('quiz', all);
+}
+function getQuizAnswer(quiz, qKey){
+  return LivretStore.get(`quiz.${quiz}.${qKey}`, null);
+}
+function clearQuizAnswers(quiz){
+  const all = LivretStore.get('quiz', {});
+  delete all[quiz];
+  LivretStore.set('quiz', all);
+}
+
 /* QCM */
 document.querySelectorAll('.quiz-options').forEach(opts => {
   const quiz = opts.dataset.quiz, q = opts.dataset.q, correct = opts.dataset.correct;
+  const qKey = 'qcm-' + q;
+  const saved = getQuizAnswer(quiz, qKey);
+
+  function applyAnswer(val, isOk, silent){
+    opts.classList.add('done');
+    opts.querySelectorAll('.quiz-opt').forEach(o => {
+      o.classList.add('disabled');
+      if (o.dataset.val === correct) o.classList.add('correct');
+      else if (o.dataset.val === val && !isOk) o.classList.add('wrong');
+    });
+    showFeedback(`fb-${quiz[0]}q${q}`, isOk);
+    if (!silent) updateScore(quiz);
+  }
+
+  if (saved){ applyAnswer(saved.val, saved.isOk, true); quizState[quiz].answered = Math.min(quizState[quiz].answered + 1, quizState[quiz].total); }
+
   opts.querySelectorAll('.quiz-opt').forEach(opt => {
     opt.addEventListener('click', () => {
       if (opts.classList.contains('done')) return;
-      opts.classList.add('done');
       const isOk = opt.dataset.val === correct;
-      opts.querySelectorAll('.quiz-opt').forEach(o => {
-        o.classList.add('disabled');
-        if (o.dataset.val === correct) o.classList.add('correct');
-        else if (o.dataset.val === opt.dataset.val && !isOk) o.classList.add('wrong');
-      });
-      showFeedback(`fb-${quiz[0]}q${q}`, isOk);
-      updateScore(quiz);
+      applyAnswer(opt.dataset.val, isOk);
+      saveQuizAnswer(quiz, qKey, opt.dataset.val, isOk);
     });
   });
 });
@@ -7251,23 +7459,33 @@ document.querySelectorAll('.quiz-options').forEach(opts => {
 /* VF */
 document.querySelectorAll('.quiz-vf').forEach(vf => {
   const quiz = vf.dataset.quiz, q = vf.dataset.q, correct = vf.dataset.correct;
+  const qKey = 'vf-' + q;
+  const saved = getQuizAnswer(quiz, qKey);
+
+  function applyAnswer(val, isOk, silent){
+    vf.classList.add('done');
+    vf.querySelectorAll('.quiz-vf-btn').forEach(b => {
+      b.classList.add('disabled');
+      if (b.dataset.val === correct) b.classList.add('correct');
+      else if (b.dataset.val === val && !isOk) b.classList.add('wrong');
+    });
+    showFeedback(`fb-${quiz[0]}q${q}`, isOk);
+    if (!silent) updateScore(quiz);
+  }
+
+  if (saved){ applyAnswer(saved.val, saved.isOk, true); quizState[quiz].answered = Math.min(quizState[quiz].answered + 1, quizState[quiz].total); }
+
   vf.querySelectorAll('.quiz-vf-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       if (vf.classList.contains('done')) return;
-      vf.classList.add('done');
       const isOk = btn.dataset.val === correct;
-      vf.querySelectorAll('.quiz-vf-btn').forEach(b => {
-        b.classList.add('disabled');
-        if (b.dataset.val === correct) b.classList.add('correct');
-        else if (b.dataset.val === btn.dataset.val && !isOk) b.classList.add('wrong');
-      });
-      showFeedback(`fb-${quiz[0]}q${q}`, isOk);
-      updateScore(quiz);
+      applyAnswer(btn.dataset.val, isOk);
+      saveQuizAnswer(quiz, qKey, btn.dataset.val, isOk);
     });
   });
 });
 
-/* ASSOCIATION */
+/* ASSOCIATION (non persistée en détail — trop de combinaisons ; le compteur global reste correct) */
 document.querySelectorAll('.quiz-assoc').forEach(assoc => {
   const quiz = assoc.dataset.quiz, q = assoc.dataset.q;
   const pairs = JSON.parse(assoc.dataset.pairs);
@@ -7340,9 +7558,53 @@ function resetQuiz(quiz) {
   });
   const prefix = quiz[0];
   document.querySelectorAll(`[id^="fb-${prefix}q"]`).forEach(fb => fb.classList.remove('show','ok','ko'));
+  clearQuizAnswers(quiz);
   updateProgress();
 }
 
+/* Recalcule la barre de progression globale au chargement, une fois les réponses sauvegardées restaurées */
+document.addEventListener('DOMContentLoaded', updateProgress);
+if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(updateProgress, 0); }
+
+
+/* ═══ ACCESSIBILITÉ CLAVIER — éléments interactifs personnalisés ═══
+   Rend focusables et activables au clavier (Entrée/Espace) tous les
+   éléments cliquables qui ne sont pas nativement des <button>/<a>,
+   et reflète l'attribut title dans aria-label pour les boutons-icônes. */
+function makeKeyboardAccessible(selector, ariaRole){
+  document.querySelectorAll(selector).forEach(el => {
+    const tag = el.tagName;
+    if (tag === 'BUTTON' || tag === 'A' || tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+    if (!el.hasAttribute('role')) el.setAttribute('role', ariaRole || 'button');
+    if (!el.dataset.kbdBound){
+      el.dataset.kbdBound = '1';
+      el.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+          e.preventDefault();
+          el.click();
+        }
+      });
+    }
+  });
+}
+function mirrorTitleToAriaLabel(){
+  document.querySelectorAll('[title]:not([aria-label])').forEach(el => {
+    el.setAttribute('aria-label', el.getAttribute('title'));
+  });
+}
+function applyAccessibilityFixes(){
+  makeKeyboardAccessible('.carnet-item[data-skill]');
+  makeKeyboardAccessible('.ba-tuto-card');
+  makeKeyboardAccessible('.quiz-opt', 'radio');
+  makeKeyboardAccessible('.quiz-vf-btn', 'radio');
+  makeKeyboardAccessible('.assoc-term');
+  makeKeyboardAccessible('.err-toggle-all');
+  makeKeyboardAccessible('#nav-overlay', 'button');
+  mirrorTitleToAriaLabel();
+}
+document.addEventListener('DOMContentLoaded', applyAccessibilityFixes);
+if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(applyAccessibilityFixes, 0); }
 
 /* ═══ NAV ACCORDÉON & RECHERCHE ═══ */
 document.addEventListener('DOMContentLoaded', function() {
