@@ -93,6 +93,13 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-heigh
 .gov-lbl{display:block;font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
 .gov-val{font-size:12px;color:var(--navy);font-weight:600;}
 @media(max-width:820px){.gov-grid{grid-template-columns:1fr;}}
+.ca-domain{margin-bottom:22px;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);}
+.ca-domain-head{display:flex;align-items:center;gap:14px;padding:14px 18px;}
+.ca-domain-letter{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--ff-title);font-weight:700;font-size:18px;flex-shrink:0;}
+.ca-domain-title{font-family:var(--ff-title);font-size:15px;font-weight:700;color:#fff;}
+.ca-domain-ects{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;}
+.ca-domain .tw{margin:0;border-radius:0;}
+.ca-domain table td{font-size:12px;line-height:1.5;vertical-align:top;}
 .nav-icon{font-size:12px;opacity:.75;flex-shrink:0;}
 .nav-qbadge{margin-left:auto;font-size:8.5px;font-weight:700;background:var(--gold);color:#fff;padding:1px 6px;border-radius:20px;flex-shrink:0;}
 .strate-legend{margin:14px 20px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);}
@@ -721,6 +728,7 @@ figure {
     <a href="#premiere-semaine" class="nav-link"><span class="nav-dot" style="background:#2D6A4F"></span>Première semaine J1–J5</a>
     <a href="#erreurs-frequentes" class="nav-link"><span class="nav-priority" title="Priorité — semaine 1">🎯</span><span class="nav-dot" style="background:#8B1A1A"></span>50 erreurs fréquentes</a>
     <a href="#carnet-progression" class="nav-link"><span class="nav-priority" title="Priorité — semaine 1">🎯</span><span class="nav-dot" style="background:#16213E"></span>Carnet de progression</a>
+    <a href="#competences-actes" class="nav-link"><span class="nav-dot" style="background:#1565C0"></span>Compétences ↔ Actes de stage</a>
     <a href="#autoeval" class="nav-link"><span class="nav-priority" title="Priorité — semaine 1">🎯</span><span class="nav-dot" style="background:#16213E"></span>Grille autoévaluation</a>
     <a href="#jury-validation" class="nav-link"><span class="nav-icon">⭐</span>Jury & validation IPA</a>
   </div>
@@ -5602,6 +5610,196 @@ id="addictions" style="margin-bottom:0;">
   </div>
 </div>
 
+<!-- CADRE OFFICIEL DU STAGE — Arrêté du 20 février 2026 -->
+<h3 class="sub" style="margin-top:24px;">Cadre officiel du stage en psychiatrie <span style="font-size:11px;font-weight:600;color:var(--muted);">— Arrêté du 20 février 2026 relatif au diplôme d'État d'infirmier</span></h3>
+<div class="notion-cle" style="background:#E3F2FD;border-color:#1565C0;">
+  <span class="nc-lbl" style="color:#1565C0;">À savoir</span>
+  <span class="nc-txt">Le nouveau référentiel de formation infirmier (applicable aux étudiants entrant en formation à partir de septembre 2026) impose <strong>au moins 5 semaines de stage en psychiatrie</strong>, de préférence auprès d'adultes, mais pouvant aussi être réalisé auprès d'enfants ou d'adolescents présentant des troubles psychiatriques (art. 28 et annexe III). Le stage compte pour l'un des 5 domaines de compétences du diplôme (180 ECTS au total, dont 66 semaines de stage sur les 3 années).</span>
+</div>
+
+<div class="g2" style="margin-top:14px;">
+  <div class="g-card" style="border-top:4px solid var(--navy);">
+    <h4 style="color:var(--navy);">Qui vous encadre pendant le stage</h4>
+    <ul>
+      <li><strong>Tuteur de stage</strong> — IDE qui évalue votre progression, formalise vos acquis sur le portfolio, vous reçoit en entretien en cours et en fin de stage</li>
+      <li><strong>Maître de stage</strong> — responsable du management et de l'accueil général du stage, garant de la qualité de l'encadrement</li>
+      <li><strong>Professionnels de proximité</strong> — présents au quotidien, expliquent les gestes, nomment les savoirs utilisés, facilitent votre réflexion</li>
+      <li><strong>Référent de stage</strong> (institut) — liaison régulière avec le terrain, intervient en cas de difficulté</li>
+      <li><strong>Référent pédagogique</strong> (institut) — évalue votre progression globale à partir du portfolio et des feuilles d'évaluation</li>
+    </ul>
+  </div>
+  <div class="g-card" style="border-top:4px solid var(--teal);">
+    <h4 style="color:var(--teal);">La grille d'évaluation officielle (4 niveaux)</h4>
+    <ul>
+      <li><strong>Non pratiquée</strong> — non vu et non pratiqué au cours du stage, quel qu'en soit le motif</li>
+      <li><strong>Non acquis</strong> — mise en œuvre non conforme aux bonnes pratiques et/ou non explicitée</li>
+      <li><strong>À améliorer</strong> — mise en œuvre non autonome, à développer</li>
+      <li><strong>Acquis</strong> — mise en œuvre en autonomie, conforme, et explicitée au regard de la situation</li>
+    </ul>
+    <p style="font-size:11px;color:var(--muted);margin-top:8px;">➜ Le carnet de progression de ce livret (🔵🟡🟠🟢 ci-dessous) est pensé pour préparer cette évaluation officielle : "j'ai observé" et "avec supervision" nourrissent le "à améliorer" ; "je sais expliquer ma démarche" correspond à l'"acquis".</p>
+  </div>
+</div>
+
+<div class="notion-cle" style="background:var(--warm);border-color:var(--muted);margin-top:14px;">
+  <span class="nc-lbl" style="color:#344055;">Contenu officiel spécifique à la psychiatrie (UE B.3 du référentiel 2026)</span>
+  <span class="nc-txt">L'entretien en psychiatrie et la relation psychothérapeutique · le repérage des comportements-problèmes et interventions associées · les moyens d'isolement, de contention et le cadre thérapeutique · l'intervention et la gestion des crises psychiatriques (protocoles de médication d'urgence, plans de crise, hospitalisation d'urgence) · les cures de sevrage et cures de sommeil · le repérage et l'évaluation régulière de la souffrance psychique et du risque suicidaire, et la mise en place de stratégies de prévention · les activités socio-thérapeutiques, socioéducatives, actes à visée psychothérapeutique et médiation thérapeutique. Ce livret couvre l'ensemble de ces points — voir Sémiologie, Fiches F1-F8, Mode Terrain, et Addictologie pour les cures de sevrage.</span>
+</div>
+
+<!-- ══ COMPÉTENCES OFFICIELLES ↔ ACTES DE STAGE ══ -->
+<h2 class="sec" id="competences-actes">Compétences officielles ↔ Actes réalisables en stage</h2>
+<p class="body">Les 5 domaines et 13 compétences du référentiel de formation (arrêté du 20 février 2026) traduits en actes concrets que vous pouvez réaliser, observer ou co-réaliser pendant votre stage en psychiatrie. Chaque ligne renvoie vers la section du livret qui vous prépare à l'acte correspondant.</p>
+
+<div class="ca-domain">
+  <div class="ca-domain-head" style="background:#16213E;">
+    <span class="ca-domain-letter">A</span>
+    <div><div class="ca-domain-title">Sciences infirmières et raisonnement clinique</div><div class="ca-domain-ects">15 ECTS</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:32%;">Compétence officielle</th><th style="width:48%;">Actes / activités réalisables en stage</th><th style="width:20%;">Voir dans le livret</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Compétence 1</strong><br><span style="font-size:11px;color:var(--muted);">Élaborer le diagnostic infirmier pour identifier les interventions adaptées</span></td>
+      <td>Rédiger un Examen de l'État Mental (EEM) complet sur un patient réel, supervisé · Formuler une hypothèse diagnostique infirmière lors d'une synthèse clinique pluridisciplinaire</td>
+      <td style="font-size:10.5px;color:#16213E;font-weight:600;">#eem, #raisonnement-clinique</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 2</strong><br><span style="font-size:11px;color:var(--muted);">Définir les interventions à mener, dans le respect de la déontologie, en co-construction</span></td>
+      <td>Co-construire avec un patient les objectifs d'un entretien infirmier de suivi · Proposer une orientation adaptée (CATTP, HDJ, groupe de parole) en argumentant le choix</td>
+      <td style="font-size:10.5px;color:#16213E;font-weight:600;">#entretien-infirmier, #cmp</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence générique</strong><br><span style="font-size:11px;color:var(--muted);">Concevoir un projet diagnostique et thérapeutique, y compris en situation d'urgence</span></td>
+      <td>Participer à la prise en charge d'une crise suicidaire ou d'un état d'agitation en suivant un protocole d'équipe · Traiter une fiche F (F1-F8) ou une situation interactive en autonomie supervisée</td>
+      <td style="font-size:10.5px;color:#16213E;font-weight:600;">#f1, #situations-interactives, #mode-terrain</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence générique</strong><br><span style="font-size:11px;color:var(--muted);">Exercer une activité professionnelle conforme à la législation, à la déontologie, à l'éthique</span></td>
+      <td>Identifier et justifier le mode de soins d'un patient (SL, SDT, SDTPI, SDRE) · Appliquer le secret professionnel en situation réelle (transmissions, visites, appels famille)</td>
+      <td style="font-size:10.5px;color:#16213E;font-weight:600;">#legal</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="ca-domain">
+  <div class="ca-domain-head" style="background:#2D6A4F;">
+    <span class="ca-domain-letter">B</span>
+    <div><div class="ca-domain-title">Pratiques cliniques infirmières, qualité et gestion des risques</div><div class="ca-domain-ects">45 ECTS — le plus gros volume</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:32%;">Compétence officielle</th><th style="width:48%;">Actes / activités réalisables en stage</th><th style="width:20%;">Voir dans le livret</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Compétence 3</strong><br><span style="font-size:11px;color:var(--muted);">Réaliser des soins de dépistage, diagnostic, thérapeutiques, palliatifs, en consultation infirmière</span></td>
+      <td>Conduire ou co-conduire un entretien d'accueil structuré · Participer à une distribution de traitement supervisée · Réaliser des soins relationnels (écoute active, réassurance, accompagnement d'une crise d'angoisse)</td>
+      <td style="font-size:10.5px;color:#2D6A4F;font-weight:600;">#entretien-infirmier, #relation, #traitements</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 4</strong><br><span style="font-size:11px;color:var(--muted);">Prescrire des produits de santé et des examens complémentaires</span></td>
+      <td>Observer/analyser une prescription médicale et vérifier sa cohérence (dose, interactions) avant administration · Participer au renouvellement protocolé d'un traitement sous supervision</td>
+      <td style="font-size:10.5px;color:#2D6A4F;font-weight:600;">#traitements, #injection-retard</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence générique</strong><br><span style="font-size:11px;color:var(--muted);">Mettre en œuvre un projet diagnostique et thérapeutique, y compris en urgence sanitaire</span></td>
+      <td>Appliquer un protocole de médication d'urgence sous supervision · Participer à la mise en place d'un plan de crise anticipé (PCA) avec un patient</td>
+      <td style="font-size:10.5px;color:#2D6A4F;font-weight:600;">#f1, #algorithmes</td>
+    </tr>
+    <tr>
+      <td><strong>UE B.3 — Psychiatrie</strong><br><span style="font-size:11px;color:var(--muted);">Contenu officiel spécifique : entretien en psychiatrie, isolement/contention, gestion de crise, cures de sevrage/sommeil, risque suicidaire, activités socio-thérapeutiques</span></td>
+      <td>Mener un entretien infirmier en psychiatrie avec relation psychothérapeutique · Observer/participer à une mesure d'isolement dans le respect du cadre thérapeutique et légal · Repérer et évaluer le risque suicidaire avec un outil structuré (F1) · Participer à une activité socio-thérapeutique ou de médiation (atelier, groupe)</td>
+      <td style="font-size:10.5px;color:#2D6A4F;font-weight:600;">#f1, #semiologie, #ciwa, #legal</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="ca-domain">
+  <div class="ca-domain-head" style="background:#8B6914;">
+    <span class="ca-domain-letter">C</span>
+    <div><div class="ca-domain-title">Prévention et promotion de la santé</div><div class="ca-domain-ects">21 ECTS</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:32%;">Compétence officielle</th><th style="width:48%;">Actes / activités réalisables en stage</th><th style="width:20%;">Voir dans le livret</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Compétence 5</strong><br><span style="font-size:11px;color:var(--muted);">Concevoir/conduire une démarche de promotion de la santé, en santé communautaire et populationnelle</span></td>
+      <td>Participer à une action de prévention en service (addictions, hygiène de vie, sommeil) · Contribuer à une séance d'information collective aux patients</td>
+      <td style="font-size:10.5px;color:#8B6914;font-weight:600;">#addictions, #entretien-motiv</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 6</strong><br><span style="font-size:11px;color:var(--muted);">Concevoir/conduire une démarche d'éducation thérapeutique du patient (ETP), en consultation infirmière</span></td>
+      <td>Observer ou co-animer une séance d'ETP · Réaliser un diagnostic éducatif avec un patient (connaissances, freins, objectifs) · Participer à un entretien motivationnel sur l'observance médicamenteuse</td>
+      <td style="font-size:10.5px;color:#8B6914;font-weight:600;">#tcc-etp, #entretien-motiv</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 7</strong><br><span style="font-size:11px;color:var(--muted);">Concevoir/conduire des actions liées au développement durable dans les pratiques professionnelles</span></td>
+      <td>Identifier et appliquer les pratiques éco-responsables du service (gestion des déchets de soins, tri, consommables)</td>
+      <td style="font-size:10.5px;color:#8B6914;font-weight:600;">—</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="ca-domain">
+  <div class="ca-domain-head" style="background:#1565C0;">
+    <span class="ca-domain-letter">D</span>
+    <div><div class="ca-domain-title">Communication, travail en équipe et leadership</div><div class="ca-domain-ects">12 ECTS</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:32%;">Compétence officielle</th><th style="width:48%;">Actes / activités réalisables en stage</th><th style="width:20%;">Voir dans le livret</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Compétence générique</strong><br><span style="font-size:11px;color:var(--muted);">Établir une relation adaptée en mobilisant les compétences psychosociales</span></td>
+      <td>Adapter sa communication face à un patient délirant, agité ou en crise de panique (situations interactives 1 à 5) · Gérer sa propre régulation émotionnelle en situation difficile</td>
+      <td style="font-size:10.5px;color:#1565C0;font-weight:600;">#situations-interactives, #relation</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 8</strong><br><span style="font-size:11px;color:var(--muted);">Gérer ou organiser une structure d'exercice individuel ou collectif</span></td>
+      <td>Comprendre l'organisation administrative d'un CMP ou d'une unité (plannings, ressources, stocks de matériel)</td>
+      <td style="font-size:10.5px;color:#1565C0;font-weight:600;">#cmp, #etablissement</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 9</strong><br><span style="font-size:11px;color:var(--muted);">Organiser les activités de soins, transmettre et recevoir des informations en équipe</span></td>
+      <td>Rédiger des transmissions DAR validées par l'équipe · Participer activement à une synthèse clinique pluridisciplinaire · Utiliser le dossier patient informatisé</td>
+      <td style="font-size:10.5px;color:#1565C0;font-weight:600;">#modeles-transmissions</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 10</strong><br><span style="font-size:11px;color:var(--muted);">Accompagner les pairs et apprenants dans le développement de leurs compétences</span></td>
+      <td>Réaliser du compagnonnage envers un étudiant de 1re année (si en 2e/3e année) · Expliciter sa pratique à un pair lors d'un soin réalisé ensemble</td>
+      <td style="font-size:10.5px;color:#1565C0;font-weight:600;">—</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="ca-domain">
+  <div class="ca-domain-head" style="background:#8B1A1A;">
+    <span class="ca-domain-letter">E</span>
+    <div><div class="ca-domain-title">Démarche scientifique, initiation à la recherche et méthodologie</div><div class="ca-domain-ects">21 ECTS</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:32%;">Compétence officielle</th><th style="width:48%;">Actes / activités réalisables en stage</th><th style="width:20%;">Voir dans le livret</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Compétence 11</strong><br><span style="font-size:11px;color:var(--muted);">Mettre en œuvre le processus d'amélioration continue des soins et de sa pratique</span></td>
+      <td>Participer ou contribuer à la déclaration d'un événement indésirable · Analyser une situation vécue en stage selon une grille d'analyse de pratique (avec le tuteur)</td>
+      <td style="font-size:10.5px;color:#8B1A1A;font-weight:600;">#erreurs-frequentes</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 12</strong><br><span style="font-size:11px;color:var(--muted);">Analyser des données scientifiques et professionnelles pour optimiser sa pratique</span></td>
+      <td>Rechercher une recommandation HAS sur un trouble ou une situation rencontrée en stage · Confronter une pratique observée en service aux données actuelles</td>
+      <td style="font-size:10.5px;color:#8B1A1A;font-weight:600;">—</td>
+    </tr>
+    <tr>
+      <td><strong>Compétence 13</strong><br><span style="font-size:11px;color:var(--muted);">Formaliser des documents professionnels dans une démarche d'amélioration continue</span></td>
+      <td>Rédiger le journal réflexif de stage (1 situation/semaine, recommandé dans ce livret) · Formaliser un projet d'amélioration de la qualité observé ou proposé en stage</td>
+      <td style="font-size:10.5px;color:#8B1A1A;font-weight:600;">#reussir-stage</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+
 <!-- CARNET DE PROGRESSION INTERACTIF -->
 <h2 class="sec" id="carnet-progression">Carnet de progression — Stage psychiatrie</h2>
 <p class="body">Cochez les situations cliniques que vous avez vécues et les compétences que vous avez exercées. Ce carnet constitue un outil de suivi et un support pour l'entretien de mi-stage avec votre tuteur.</p>
@@ -6876,11 +7074,17 @@ id="addictions" style="margin-bottom:0;">
 
 <h3 class="sub" style="margin-top:20px;">Références</h3>
 <ul style="font-size:12px;color:#344055;line-height:1.9;padding-left:20px;">
+  <li><strong>Arrêté du 20 février 2026 relatif au diplôme d'État d'infirmier</strong> (NOR : ESRS2601184A, JORF du 25 février 2026, texte 53/155) — référentiel de formation, de compétences et de certification applicable aux étudiants entrant en formation à compter de septembre 2026. Abroge l'arrêté du 31 juillet 2009 (abrogation effective au 30 juin 2030).</li>
   <li>American Psychiatric Association — <em>DSM-5</em>, Manuel diagnostique et statistique des troubles mentaux, 5e édition, 2013.</li>
   <li>Organisation mondiale de la santé — <em>CIM-10</em>, Classification internationale des maladies, chapitre V (troubles mentaux et du comportement).</li>
   <li>Haute Autorité de Santé (HAS) — Recommandations de bonnes pratiques en psychiatrie et santé mentale [référence(s) précise(s) à compléter selon les recommandations effectivement citées].</li>
   <li>Loi n° 2022-46 du 22 janvier 2022 — Isolement et contention en psychiatrie.</li>
 </ul>
+
+<div class="notion-cle" style="background:#E3F2FD;border-color:#1565C0;margin-top:14px;">
+  <span class="nc-lbl" style="color:#1565C0;">Note sur l'arrêté du 20 février 2026</span>
+  <span class="nc-txt">Ce livret a été relu à l'aune du nouveau référentiel de formation infirmier : la durée minimale de stage en psychiatrie (5 semaines), les 5 domaines et 13 compétences du référentiel, les rôles d'encadrement (tuteur, maître de stage, professionnels de proximité, référents pédagogique et de stage), et la grille d'évaluation officielle à 4 niveaux (non pratiquée / non acquis / à améliorer / acquis) sont intégrés dans la section « Réussir son stage ». Le contenu spécifique à la psychiatrie de l'UE B.3 (entretien en psychiatrie, isolement et contention, gestion des crises, repérage du risque suicidaire, cures de sevrage et de sommeil, activités socio-thérapeutiques) est couvert par ce livret — voir Sémiologie, Cadre légal, Fiches F1-F8 et Mode Terrain.</span>
+</div>
 
 <p style="font-size:11px;color:var(--muted);margin-top:16px;">Pour signaler une erreur, une imprécision ou suggérer un ajout à ce livret : [adresse ou formulaire de contact à compléter].</p>
 </section>
