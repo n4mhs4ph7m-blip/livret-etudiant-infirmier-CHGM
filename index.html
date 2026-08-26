@@ -8073,8 +8073,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function closeAll() {
-    document.querySelectorAll('.nav-part-body').forEach(function(b) { b.classList.remove('open'); });
-    document.querySelectorAll('.nav-part-header').forEach(function(h) { h.classList.remove('active'); });
+    /* "p0" est le menu épinglé (Bienvenue, Mon espace, Quiz, Mon parcours, Mode Terrain) —
+       il reste toujours visible et n'est jamais replié automatiquement au défilement. */
+    document.querySelectorAll('.nav-part-body').forEach(function(b) { if (b.id !== 'p0') b.classList.remove('open'); });
+    document.querySelectorAll('.nav-part-header').forEach(function(h) { if (h.getAttribute('data-part') !== 'p0') h.classList.remove('active'); });
   }
 
   document.querySelectorAll('.nav-part-header').forEach(function(header) {
@@ -8087,7 +8089,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* Ouvrir P1 par défaut au chargement */
+  /* Ouvrir P0 (menu épinglé) et P1 par défaut au chargement */
+  openPart('p0');
   openPart('p1');
 
   /* --- SUIVI DE SCROLL → ouvre la bonne partie --- */
