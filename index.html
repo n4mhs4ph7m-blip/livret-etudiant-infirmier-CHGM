@@ -41,6 +41,58 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-heigh
 .nav-link.active{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--gold);font-weight:600;}
 .nav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .nav-priority{font-size:10px;flex-shrink:0;filter:grayscale(0) drop-shadow(0 0 1px rgba(0,0,0,.3));}
+.terrain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:rgba(255,255,255,.08);}
+.terrain-card{background:#4a1414;padding:14px 16px;}
+.terrain-card-title{font-size:12.5px;font-weight:700;color:#FFD98E;margin-bottom:8px;}
+.terrain-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px;}
+.terrain-card li{font-size:10.5px;color:rgba(255,255,255,.82);line-height:1.4;}
+.terrain-card li strong{color:#fff;font-weight:700;}
+.err-accordion{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;background:var(--white);}
+.err-accordion-summary{list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--ff-title);font-size:15px;font-weight:700;color:var(--bord);display:flex;align-items:center;justify-content:space-between;background:var(--bord-l);user-select:none;}
+.err-accordion-summary::-webkit-details-marker{display:none;}
+.err-accordion-chevron{font-size:12px;color:var(--bord);transition:transform .2s;flex-shrink:0;margin-left:12px;}
+.err-accordion[open] .err-accordion-chevron{transform:rotate(180deg);}
+.err-accordion-body{padding:14px 18px 4px;}
+.err-toggle-all{display:inline-block;font-size:11px;color:var(--bord);background:var(--bord-l);border:1px solid var(--bord);border-radius:20px;padding:6px 14px;cursor:pointer;margin-bottom:16px;font-weight:600;}
+.err-toggle-all:hover{background:var(--bord);color:#fff;}
+.situation-card{border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:12px;overflow:hidden;background:var(--white);box-shadow:var(--sh);}
+.situation-summary{list-style:none;cursor:pointer;padding:16px 20px;background:linear-gradient(135deg,#E3F2FD,#d5e9fa);display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;user-select:none;}
+.situation-summary::-webkit-details-marker{display:none;}
+.situation-num{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#1565C0;background:#fff;padding:3px 9px;border-radius:20px;}
+.situation-title{font-family:var(--ff-title);font-size:15px;font-weight:700;color:var(--navy);flex:1;min-width:200px;}
+.situation-sujet{font-size:11px;color:var(--muted);width:100%;order:3;}
+.situation-chevron{font-size:12px;color:#1565C0;transition:transform .2s;}
+.situation-card[open] .situation-chevron{transform:rotate(180deg);}
+.situation-body{padding:18px 20px;}
+.situation-scenario{background:var(--warm);border-radius:var(--r);padding:12px 16px;font-size:12.5px;line-height:1.6;color:#344055;margin-bottom:16px;}
+.sit-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.sit-step{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:var(--cream);border-radius:8px;border:1px solid var(--border);}
+.sit-step-icon{font-size:16px;flex-shrink:0;width:22px;text-align:center;}
+.sit-step-body h5{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.sit-step-body p{font-size:12px;color:#344055;line-height:1.5;margin:0;}
+.situation-dar{background:#F0EDE8;border-radius:8px;border-left:4px solid var(--teal);padding:12px 16px;margin-bottom:12px;}
+.sd-lbl{font-size:8px;font-weight:800;color:var(--teal);letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px;display:block;}
+.situation-dar p{font-family:var(--ff-mono);font-size:11.5px;line-height:1.8;color:#344055;margin:0;}
+.situation-erreur{background:var(--bord-l);border-left:4px solid var(--bord);border-radius:8px;padding:11px 15px;margin-bottom:10px;display:flex;flex-direction:column;gap:3px;}
+.se-lbl{font-size:9px;font-weight:800;color:var(--bord);text-transform:uppercase;letter-spacing:.1em;}
+.se-txt{font-size:12px;color:#6b1a1a;line-height:1.5;}
+.situation-feedback{background:var(--sage-l);border-left:4px solid var(--teal);border-radius:8px;padding:11px 15px;display:flex;flex-direction:column;gap:3px;}
+.sf-lbl{font-size:9px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;}
+.sf-txt{font-size:12px;color:#1e4d38;line-height:1.5;}
+.parcours-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.08);}
+.parcours-step{display:flex;gap:16px;padding:16px 34px;background:#1a2d52;text-decoration:none;transition:background .15s;}
+.parcours-step:hover{background:#22386a;}
+.parcours-step-num{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--ff-title);font-weight:700;font-size:15px;flex-shrink:0;}
+.parcours-step-body h4{font-family:var(--ff-title);font-size:14.5px;font-weight:700;color:#fff;margin-bottom:8px;}
+.parcours-step-row{display:flex;flex-wrap:wrap;gap:6px;font-size:11px;color:rgba(255,255,255,.72);line-height:1.5;margin-bottom:3px;}
+.psr-lbl{font-weight:700;color:var(--teal-l);flex-shrink:0;}
+.parcours-step-critere{margin-top:4px;padding-top:6px;border-top:1px dashed rgba(255,255,255,.15);}
+.parcours-step-critere .psr-lbl{color:#FFD98E;}
+.gov-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.gov-item{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:10px 14px;}
+.gov-lbl{display:block;font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.gov-val{font-size:12px;color:var(--navy);font-weight:600;}
+@media(max-width:820px){.gov-grid{grid-template-columns:1fr;}}
 .nav-icon{font-size:12px;opacity:.75;flex-shrink:0;}
 .nav-qbadge{margin-left:auto;font-size:8.5px;font-weight:700;background:var(--gold);color:#fff;padding:1px 6px;border-radius:20px;flex-shrink:0;}
 .strate-legend{margin:14px 20px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);}
@@ -256,7 +308,7 @@ tbody td:first-child{font-weight:600;color:var(--navy);font-size:12.5px;}
 .fb-body{color:rgba(255,255,255,.6);font-size:11.5px;}
 .quiz-reset{margin-top:14px;padding:8px 18px;border-radius:30px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.13);color:rgba(255,255,255,.52);font-size:11px;font-weight:600;cursor:pointer;transition:all .14s;font-family:var(--ff-body);}
 .quiz-reset:hover{background:rgba(255,255,255,.12);color:#fff;}
-@media print{body{background:#fff!important;font-size:12pt;}.sidenav{display:none!important;}.main{margin-left:0!important;padding:0!important;max-width:100%!important;}.quiz-block,.patho-card,.fiche,.strate{page-break-inside:avoid;}.part-banner{-webkit-print-color-adjust:exact;}}
+@media print{body{background:#fff!important;font-size:12pt;}.sidenav{display:none!important;}.main{margin-left:0!important;padding:0!important;max-width:100%!important;}.quiz-block,.patho-card,.fiche,.strate{page-break-inside:avoid;}.part-banner{-webkit-print-color-adjust:exact;}.err-accordion-body{display:block!important;}.err-toggle-all{display:none!important;}}
 @page{size:A4;margin:14mm;}
 @media(max-width:820px){.main{margin-left:0;padding:20px 16px;}.patho-body,.g2,.g3,.vig-grid,.ns-row,.quiz-assoc{grid-template-columns:1fr;}.glos{columns:1;}.semo-head-row,.semo-data-row{grid-template-columns:130px 1fr;}}
 
@@ -278,15 +330,24 @@ tbody td:first-child{font-weight:600;color:var(--navy);font-size:12.5px;}
 .carnet-banner{background:linear-gradient(135deg,#16213E,#1e3a6e);padding:20px 26px;}
 .carnet-banner h3{font-family:var(--ff-title);font-size:22px;font-weight:700;color:#fff;margin-bottom:4px;}
 .carnet-banner p{font-size:12px;color:rgba(255,255,255,.45);font-style:italic;}
+.carnet-level-legend{display:flex;flex-wrap:wrap;gap:10px 16px;padding:12px 26px;background:var(--warm);border-bottom:1px solid var(--border);}
+.cll-item{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--muted);}
+.cll-dot{width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
 .carnet-body{padding:20px 26px;}
 .carnet-section{margin-bottom:18px;}
 .carnet-section-title{font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border);}
 .carnet-items{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .carnet-item{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;background:var(--cream);border-radius:8px;border:1px solid var(--border);cursor:pointer;transition:all .14s;user-select:none;}
 .carnet-item:hover{background:var(--warm);border-color:var(--gold);}
-.carnet-item.done{background:var(--sage-l);border-color:var(--teal);}
-.carnet-check{width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:transparent;transition:all .14s;}
-.carnet-item.done .carnet-check{background:var(--teal);border-color:var(--teal);color:#fff;}
+.carnet-item[data-level="1"]{background:#E3F2FD;border-color:#1565C0;}
+.carnet-item[data-level="2"]{background:var(--gold-l);border-color:#8B6914;}
+.carnet-item[data-level="3"]{background:#FFF1DE;border-color:#C77800;}
+.carnet-item[data-level="4"]{background:var(--sage-l);border-color:var(--teal);}
+.carnet-check{width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--muted);transition:all .14s;}
+.carnet-item[data-level="1"] .carnet-check{background:#1565C0;border-color:#1565C0;}
+.carnet-item[data-level="2"] .carnet-check{background:#8B6914;border-color:#8B6914;}
+.carnet-item[data-level="3"] .carnet-check{background:#C77800;border-color:#C77800;}
+.carnet-item[data-level="4"] .carnet-check{background:var(--teal);border-color:var(--teal);}
 .carnet-text{font-size:12px;color:#344055;line-height:1.45;}
 .carnet-text strong{display:block;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:2px;}
 .carnet-text small{font-size:10px;color:var(--muted);}
@@ -500,6 +561,8 @@ figure {
   </div>
   <div class="nav-part-body" id="p0">
     <a href="#index-page" class="nav-link"><span class="nav-icon">📑</span>Table des matières</a>
+    <a href="#mon-parcours" class="nav-link" style="background:rgba(45,106,79,.35);"><span class="nav-icon">🧭</span>Mon parcours de stage</a>
+    <a href="#mode-terrain" class="nav-link" style="background:rgba(139,26,26,.35);"><span class="nav-icon">🚨</span>Mode Terrain — Accès rapide</a>
   </div>
 
   <!-- P1 -->
@@ -642,6 +705,7 @@ figure {
   </div>
   <div class="nav-part-body" id="p9">
     <a href="#vignettes-avancees" class="nav-link"><span class="nav-dot" style="background:#8B6914"></span>12 vignettes cliniques</a>
+    <a href="#situations-interactives" class="nav-link"><span class="nav-dot" style="background:#1565C0"></span>10 situations interactives</a>
     <a href="#mini-raisonnements" class="nav-link"><span class="nav-dot" style="background:#8B6914"></span>30 mini-raisonnements</a>
     <a href="#semo-exercices" class="nav-link"><span class="nav-dot" style="background:#8B6914"></span>6 exercices sémiologie</a>
   </div>
@@ -680,6 +744,7 @@ figure {
   </div>
   <div class="nav-part-body" id="p12">
     <a href="#glossaire" class="nav-link"><span class="nav-icon">📚</span>Glossaire (74 termes)</a>
+    <a href="#gouvernance-validation" class="nav-link"><span class="nav-icon">©</span>Gouvernance et validation</a>
   </div>
 
   <!-- Légende -->
@@ -952,6 +1017,192 @@ figure {
   <div class="leg-item"><div class="leg-sw" style="background:#8B1A1A">3</div><strong>Expert</strong> — 3e année +</div>
   <div class="leg-item" style="margin-left:auto;"><div class="leg-sw" style="background:#8B6914">Q</div><strong>Quiz</strong> autoévaluation</div>
 </div>
+
+<!-- ══ MON PARCOURS DE STAGE ══ -->
+<section id="mon-parcours" style="background:linear-gradient(135deg,#16213E,#1e3a6e);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
+  <div style="padding:28px 34px 20px;">
+    <span style="font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-l);display:block;margin-bottom:10px;">🧭 Tableau de bord pédagogique</span>
+    <h2 style="font-family:var(--ff-title);font-size:clamp(24px,3.6vw,32px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:6px;">Mon parcours de stage en psychiatrie</h2>
+    <p style="font-size:12.5px;color:rgba(255,255,255,.55);">Neuf étapes progressives, du premier jour au bilan final. Chaque étape indique quoi lire, quoi faire, et comment savoir que vous êtes prêt(e) pour la suivante.</p>
+  </div>
+  <div class="parcours-list">
+    <a href="#etablissement" class="parcours-step">
+      <div class="parcours-step-num">1</div>
+      <div class="parcours-step-body">
+        <h4>Je découvre mon lieu de stage</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Connaître l'organisation, les pôles, les acteurs</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Établissement · Organisation · Parcours patient</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Se repérer dans une structure</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Faire le tour du service avec le tuteur, identifier CMP/CATTP/HDJ</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Peut nommer 3 structures et leur rôle</span></div>
+      </div>
+    </a>
+
+    <a href="#legal" class="parcours-step">
+      <div class="parcours-step-num">2</div>
+      <div class="parcours-step-body">
+        <h4>Je comprends la sécurité et la posture</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Cadre légal, posture professionnelle, limites</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Cadre légal · Réussir son stage · 50 erreurs (partie relationnelle)</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Sécurité, posture professionnelle</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Lire les 10 premières erreurs fréquentes, les commenter avec le tuteur</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Peut citer 3 erreurs à ne jamais commettre et pourquoi</span></div>
+      </div>
+    </a>
+
+    <a href="#semiologie" class="parcours-step">
+      <div class="parcours-step-num">3</div>
+      <div class="parcours-step-body">
+        <h4>J'apprends à observer un patient</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Sémiologie de base, EEM</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Sémiologie · EEM</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Observation clinique structurée</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Rédiger un EEM en 10 points sur un patient réel (supervisé)</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>EEM complet rédigé et validé par le tuteur</span></div>
+      </div>
+    </a>
+
+    <a href="#entretien-infirmier" class="parcours-step">
+      <div class="parcours-step-num">4</div>
+      <div class="parcours-step-body">
+        <h4>Je réalise mon premier entretien</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Communication, alliance thérapeutique</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Entretien infirmier · Relation soignant-soigné · Documents pro</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Relation soignant-soigné</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Conduire ou co-conduire un entretien d'accueil</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>A utilisé le modèle de compte-rendu, débriefé avec le tuteur</span></div>
+      </div>
+    </a>
+
+    <a href="#traitements" class="parcours-step">
+      <div class="parcours-step-num">5</div>
+      <div class="parcours-step-body">
+        <h4>Je participe aux soins et traitements</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Pharmacologie de base, injections, surveillance</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Traitements · Injections LAI</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Sécurité des soins</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Participer à une distribution de traitement supervisée</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Peut nommer la classe et 2 effets indésirables à surveiller</span></div>
+      </div>
+    </a>
+
+    <a href="#raisonnement-clinique" class="parcours-step">
+      <div class="parcours-step-num">6</div>
+      <div class="parcours-step-body">
+        <h4>J'apprends à raisonner face à une situation</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Raisonnement clinique complet</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Raisonnement clinique · Vignettes · Situations interactives · Mode Terrain</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Raisonnement clinique infirmier</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Traiter 2 situations par semaine + 1 fiche terrain en situation réelle</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Peut argumenter observation → hypothèse → action → transmission sans aide</span></div>
+      </div>
+    </a>
+
+    <a href="#modeles-transmissions" class="parcours-step">
+      <div class="parcours-step-num">7</div>
+      <div class="parcours-step-body">
+        <h4>Je réalise mes premières transmissions</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Transmission DAR, travail d'équipe</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Modèles de transmissions · Fiches F1-F8</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Transmission professionnelle</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Rédiger 3 transmissions DAR validées</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Transmission validée sans reprise par l'équipe</span></div>
+      </div>
+    </a>
+
+    <a href="#carnet-progression" class="parcours-step">
+      <div class="parcours-step-num">8</div>
+      <div class="parcours-step-body">
+        <h4>Je prépare mon bilan de mi-stage</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Auto-évaluation, identification des lacunes</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Carnet de progression · Grille d'autoévaluation</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Réflexivité professionnelle</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Compléter le carnet, lister 2 points à travailler</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Carnet à jour, objectifs de fin de stage formulés</span></div>
+      </div>
+    </a>
+
+    <a href="#jury-validation" class="parcours-step">
+      <div class="parcours-step-num">9</div>
+      <div class="parcours-step-body">
+        <h4>Je prépare mon bilan final</h4>
+        <div class="parcours-step-row"><span class="psr-lbl">🎯 Objectif</span><span>Valorisation du stage, préparation IPA</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">📖 Contenus liés</span><span>Jury & validation · Art & observation clinique</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">🧩 Compétence</span><span>Posture professionnelle aboutie</span></div>
+        <div class="parcours-step-row"><span class="psr-lbl">✅ Activité</span><span>Simuler un oral avec le tuteur à partir de la préparation jury</span></div>
+        <div class="parcours-step-row parcours-step-critere"><span class="psr-lbl">➡️ Je passe à l'étape suivante quand :</span><span>Peut répondre aux questions-types du jury sans notes</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ MODE TERRAIN — ACCÈS RAPIDE ══ -->
+<section id="mode-terrain" style="background:linear-gradient(135deg,#3a0f0f,#7a1a1a);border-radius:var(--r-lg);padding:0;margin-bottom:52px;box-shadow:var(--sh-md);overflow:hidden;">
+  <div style="padding:26px 32px 18px;">
+    <span style="font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#FFD98E;display:block;margin-bottom:10px;">🚨 Accès rapide — Terrain</span>
+    <h2 style="font-family:var(--ff-title);font-size:clamp(22px,3.4vw,30px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:6px;">Situation clinique — accès rapide</h2>
+    <p style="font-size:12.5px;color:rgba(255,255,255,.6);">Consultable en quelques secondes, en situation réelle. Structure identique pour chaque fiche : j'observe → je recherche → je fais → je transmets → j'appelle immédiatement si…</p>
+  </div>
+  <div class="terrain-grid">
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">🆘 Patient suicidaire</div>
+      <ul><li><strong>J'observe :</strong> calme soudain, tristesse, retrait</li><li><strong>Je recherche :</strong> idées, intention, plan, moyens</li><li><strong>Je fais :</strong> ne jamais laisser seul, poser la question directement</li><li><strong>Je transmets :</strong> niveau de risque + mots exacts du patient</li><li><strong>J'appelle si :</strong> plan précis + accès aux moyens</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">⚡ Patient agité</div>
+      <ul><li><strong>J'observe :</strong> tension motrice, ton de voix, distance</li><li><strong>Je recherche :</strong> cause déclenchante, douleur, besoin non exprimé</li><li><strong>Je fais :</strong> espace, calme, ton bas, retrait des stimuli</li><li><strong>Je transmets :</strong> facteur déclenchant + évolution</li><li><strong>J'appelle si :</strong> escalade malgré désescalade verbale</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">👁 Patient délirant</div>
+      <ul><li><strong>J'observe :</strong> discours, cohérence, thème du délire</li><li><strong>Je recherche :</strong> adhésion au délire, retentissement, angoisse associée</li><li><strong>Je fais :</strong> ni valider ni contredire, rester factuel</li><li><strong>Je transmets :</strong> contenu exact + degré de conviction</li><li><strong>J'appelle si :</strong> passage à l'acte lié au délire</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">😟 Patient anxieux</div>
+      <ul><li><strong>J'observe :</strong> respiration, tremblements, verbalisation</li><li><strong>Je recherche :</strong> déclencheur, antécédents de crise</li><li><strong>Je fais :</strong> voix calme, respiration guidée, réassurance factuelle</li><li><strong>Je transmets :</strong> fréquence/intensité, facteur déclenchant</li><li><strong>J'appelle si :</strong> douleur thoracique, dissociation majeure</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">💨 Attaque de panique</div>
+      <ul><li><strong>J'observe :</strong> hyperventilation, sensation de mort imminente</li><li><strong>Je recherche :</strong> antécédents cardiaques, première fois ?</li><li><strong>Je fais :</strong> rester présent, respiration lente accompagnée</li><li><strong>Je transmets :</strong> durée, résolution, contexte</li><li><strong>J'appelle si :</strong> doute diagnostique somatique</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">🚫 Refus de soins</div>
+      <ul><li><strong>J'observe :</strong> verbalisation du refus, attitude</li><li><strong>Je recherche :</strong> raison (effet secondaire, croyance, oubli)</li><li><strong>Je fais :</strong> explorer sans forcer, ne pas culpabiliser</li><li><strong>Je transmets :</strong> raison exacte donnée par le patient</li><li><strong>J'appelle si :</strong> refus mettant en danger vital immédiat</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">💊 Effets indésirables traitement</div>
+      <ul><li><strong>J'observe :</strong> signes physiques (raideur, tremblements, sédation)</li><li><strong>Je recherche :</strong> molécule, dose, délai depuis la prise</li><li><strong>Je fais :</strong> ne pas administrer la dose suivante sans avis</li><li><strong>Je transmets :</strong> signe observé + horaire + molécule</li><li><strong>J'appelle si :</strong> syndrome malin, dyskinésie aiguë sévère</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">📋 Observation clinique rapide</div>
+      <ul><li><strong>J'observe :</strong> apparence, contact, discours, thymie</li><li><strong>Je recherche :</strong> cohérence avec l'état habituel connu</li><li><strong>Je fais :</strong> noter immédiatement, ne pas attendre la fin de poste</li><li><strong>Je transmets :</strong> EEM condensé en 4 lignes</li><li><strong>J'appelle si :</strong> rupture nette avec l'état de base</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">📝 Transmission DAR</div>
+      <ul><li><strong>D — Donnée :</strong> ce que j'observe, factuel</li><li><strong>A — Action :</strong> ce que j'ai fait</li><li><strong>R — Résultat :</strong> effet de l'action, évolution</li><li><strong>Je transmets :</strong> rédiger à chaud, pas en fin de service</li><li><strong>J'appelle si :</strong> élément nécessitant un avis médical immédiat</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">🧠 EEM express</div>
+      <ul><li><strong>J'observe :</strong> les 10 domaines parcourus mentalement</li><li><strong>Je recherche :</strong> le domaine anormal du jour</li><li><strong>Je fais :</strong> noter uniquement les écarts à la norme</li><li><strong>Je transmets :</strong> écarts + hypothèse associée</li><li><strong>J'appelle si :</strong> anomalie de conscience ou d'orientation</li></ul>
+    </div>
+
+    <div class="terrain-card">
+      <div class="terrain-card-title">🔥 Conduite à tenir en crise</div>
+      <ul><li><strong>J'observe :</strong> signes de montée en tension</li><li><strong>Je recherche :</strong> présence de facteurs de risque connus</li><li><strong>Je fais :</strong> sécuriser l'espace, alerter l'équipe tôt</li><li><strong>Je transmets :</strong> chronologie précise des faits</li><li><strong>J'appelle si :</strong> toute mise en danger immédiate (soi/autrui)</li></ul>
+    </div>
+
+  </div>
+  <p style="padding:14px 32px 22px;font-size:10.5px;color:rgba(255,255,255,.4);">Ces fiches complètent — sans les remplacer — les fiches détaillées F1 à F8 disponibles plus loin dans le livret, pour la révision approfondie.</p>
+</section>
 
 <!-- ══ PARTIE 1 — ÉTABLISSEMENT ══ -->
 <section id="etablissement">
@@ -2465,6 +2716,525 @@ figure {
 </div>
 </div>
 </section>
+
+<!-- ══ SITUATIONS CLINIQUES INTERACTIVES ══ -->
+<section id="situations-interactives">
+<div class="part-banner" style="background:linear-gradient(135deg,#1e3a5f,#2d5a8f)" data-num="🎭">
+  <span class="pb-tag">Raisonnement clinique · 10 situations interactives</span>
+  <h2>Situations cliniques interactives</h2>
+  <p class="pb-sub">Observer → Explorer → Évaluer les risques → Poser sa posture → Agir → Transmettre</p>
+</div>
+
+<div class="notion-cle" style="background:#E3F2FD;border-color:#1565C0;">
+  <span class="nc-lbl" style="color:#1565C0;">Mode d'emploi</span>
+  <span class="nc-txt">Lisez la situation initiale, puis essayez de répondre vous-même à chaque question avant de dépliez la carte. Chaque situation se termine par une transmission DAR modèle, une erreur fréquente à éviter, et le raisonnement attendu.</span>
+</div>
+
+<span class="err-toggle-all" onclick="toggleAllSituations(this)" style="background:#E3F2FD;border-color:#1565C0;color:#1565C0;">Tout déplier</span>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 1</span>
+  <span class="situation-title">Premier entretien avec un patient psychotique</span>
+  <span class="situation-sujet">M. K., 24 ans, premier épisode psychotique — J1 hospitalisation</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Vous accueillez M. K., 24 ans, hospitalisé depuis hier pour un premier épisode psychotique. Il accepte l'entretien mais reste sur ses gardes, regarde souvent la porte.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Contact méfiant, vigilance accrue, discours parfois décousu, absence de reconnaissance de trouble.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Vécu subjectif de l'hospitalisation, présence d'hallucinations, degré d'adhésion aux soins, entourage disponible.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Rupture du lien de confiance si questions trop frontales ; risque auto/hétéro-agressif lié au vécu délirant ; isolement social.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Ton calme, questions ouvertes, ne pas presser, accepter le silence, ne jamais forcer la reconnaissance du trouble.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Instaurer un climat de sécurité, proposer des repères simples (horaires, personnes référentes), observer sans confronter.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Degré de méfiance, éléments délirants ou hallucinatoires rapportés spontanément, qualité du contact établi.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient méfiant, contact établi progressivement, évoque "des gens qui parlent de lui" sans plus de détails.<br><strong>A —</strong> Entretien mené en terrain neutre, ton calme, aucune confrontation.<br><strong>R —</strong> Contact maintenu 15 min, patient accepte de revoir l'infirmier demain.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Vouloir "faire dire" au patient qu'il est malade, ou le questionner directement et frontalement sur son délire dès le premier contact.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">En phase aiguë, l'objectif n'est pas l'insight mais l'alliance. La confiance se construit avant l'exploration clinique approfondie.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 2</span>
+  <span class="situation-title">Patient présentant un délire de persécution</span>
+  <span class="situation-sujet">Mme L. — convaincue d'être surveillée par ses voisins</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Mme L. affirme que ses voisins ont installé des caméras pour la surveiller et transmettre des informations à son employeur.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Conviction inébranlable, angoisse associée, comportement de vérification (rideaux fermés, vérifie les prises).</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Ancienneté du délire, retentissement fonctionnel (sommeil, sorties), risque de passage à l'acte défensif.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Agression envers les "persécuteurs" désignés, épuisement par l'hypervigilance, isolement social majeur.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Ne pas valider ("oui les caméras existent"), ne pas contredire frontalement ("non, c'est faux") — reconnaître la souffrance réelle sans cautionner le contenu.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Proposer un cadre rassurant, observer les comportements de vérification, favoriser le lien avec le médecin pour ajustement thérapeutique.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Contenu exact du délire, degré de conviction, retentissement comportemental observé.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patiente exprime conviction de surveillance par les voisins, vérifie les fenêtres à plusieurs reprises.<br><strong>A —</strong> Écoute sans validation ni confrontation, réassurance sur la sécurité du service.<br><strong>R —</strong> Angoisse diminuée en fin d'entretien, accepte de rester dans le service commun.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Argumenter point par point contre le délire ("mais on a vérifié, il n'y a pas de caméra") — renforce souvent la conviction au lieu de la réduire.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Le délire répond à une logique interne cohérente pour le patient ; la contradiction factuelle est perçue comme une preuve supplémentaire de la conspiration, pas comme un argument rationnel.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 3</span>
+  <span class="situation-title">Patient exprimant des idées suicidaires</span>
+  <span class="situation-sujet">M. N. — verbalisation inattendue en fin d'entretien</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> En fin d'entretien de routine, M. N. dit soudainement : "Parfois je me dis que tout le monde irait mieux sans moi."</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Verbalisation directe, moment où la phrase survient (fin d'entretien = souvent signal important), ton de la voix.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Idéation (fréquence, intensité), intentionnalité, scénario et moyens, facteurs protecteurs présents.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Sous-estimation du risque parce que la phrase semble "en passant" ; minimisation par l'étudiant par malaise.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Prendre au sérieux systématiquement, ne jamais relativiser ("mais non, ne dites pas ça"), poser directement la question du passage à l'acte.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Évaluation structurée du risque immédiate, ne pas laisser partir le patient sans cette évaluation, alerte médecin selon le niveau.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Verbatim exact, contexte d'apparition, résultat de l'évaluation du risque.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient verbalise "tout le monde irait mieux sans moi" en fin d'entretien.<br><strong>A —</strong> Évaluation du risque suicidaire menée immédiatement (idéation présente, pas de plan ni d'intention formulée).<br><strong>R —</strong> Risque évalué faible à modéré, transmission au médecin, réévaluation prévue à 24h.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Laisser passer la phrase parce que l'entretien est "fini", ou par peur de "faire empirer les choses" en posant la question.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Reprend le principe fondamental déjà énoncé en fiche F1 — poser la question ne provoque jamais le passage à l'acte, elle peut au contraire l'éviter.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 4</span>
+  <span class="situation-title">Patient très agité</span>
+  <span class="situation-sujet">M. O. — tension et exigence de sortie immédiate</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> M. O. hausse le ton dans le couloir commun, tape du poing sur une table, réclame une sortie immédiate.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Tension motrice, augmentation du volume vocal, distance aux autres patients, présence ou non de menaces verbales.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Élément déclencheur immédiat, douleur ou besoin non satisfait, antécédents d'agitation similaire.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Escalade vers l'hétéro-agressivité, effet de contagion sur les autres patients présents, mise en danger de l'équipe.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Voix basse et posée, distance de sécurité, ne jamais tourner le dos, ne pas s'isoler seul avec le patient.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Dégager l'espace des autres patients, proposer une alternative concrète (aller dans un lieu calme), appeler du renfort tôt plutôt que tard.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Élément déclencheur identifié, évolution de l'agitation, mesures prises et leur effet.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient agité, ton élevé, réclame sortie immédiate suite à refus de permission.<br><strong>A —</strong> Désescalade verbale, proposition d'espace calme, renfort d'équipe sollicité en prévention.<br><strong>R —</strong> Apaisement progressif en 10 min, pas de recours à la contention.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Vouloir gérer seul la situation par souci de "ne pas déranger" l'équipe, ou hausser le ton en miroir de l'agitation du patient.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Demander du renfort tôt n'est pas un échec professionnel — c'est la meilleure pratique de sécurité, pour le patient comme pour l'équipe.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 5</span>
+  <span class="situation-title">Attaque de panique</span>
+  <span class="situation-sujet">Mme P. — hyperventilation et sensation de mort imminente</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Mme P. vous alerte, hyperventile, dit "je vais mourir, mon cœur va exploser", tremble, mains moites.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Hyperventilation, tachycardie visible, sensation de mort imminente exprimée, absence de cyanose ou de perte de connaissance.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Antécédents cardiaques réels, première crise ou récidive connue, facteur déclenchant immédiat.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Confusion avec une urgence somatique réelle nécessitant d'éliminer une cause organique en cas de doute.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Présence calme et continue, ne pas minimiser ("ce n'est rien"), accompagner la respiration sans forcer.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Rester auprès du patient, guider une respiration lente, réassurer sur le caractère non dangereux de la crise si diagnostic déjà connu.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Durée de la crise, résolution, contexte déclenchant, antécédents.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patiente en crise de panique, hyperventilation, sensation de mort imminente.<br><strong>A —</strong> Accompagnement respiratoire, présence continue, réassurance.<br><strong>R —</strong> Résolution en 12 minutes, patiente apaisée, pas de signe organique associé.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Dire "calmez-vous" sans accompagnement actif — cette phrase seule est perçue comme une injonction impossible à suivre et majore l'angoisse.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Une attaque de panique est intensément vécue comme une urgence vitale par le patient, même si elle ne l'est pas médicalement — la posture doit honorer ce vécu sans le disqualifier.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 6</span>
+  <span class="situation-title">Épisode maniaque</span>
+  <span class="situation-sujet">M. Q., bipolaire connu — exaltation et privation de sommeil</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> M. Q., connu bipolaire, parle très vite, enchaîne des projets, n'a pas dormi depuis deux nuits, se montre familier avec le personnel.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Tachypsychie, logorrhée, désinhibition, réduction du besoin de sommeil, humeur euphorique ou irritable.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Observance du traitement thymorégulateur, consommation associée (alcool, stimulants), risque financier ou sexuel lié à la désinhibition.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Épuisement somatique par absence de sommeil prolongée, mise en danger financière/sociale, désinhibition envers autrui.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Cadre ferme mais non punitif, limiter la stimulation, ne pas alimenter l'euphorie par un ton complice.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Surveiller l'hydratation et le sommeil, limiter les stimulations excessives, alerter sur toute rupture de traitement.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Niveau d'agitation, durée de la privation de sommeil, observance thérapeutique, comportements à risque observés.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient en phase d'exaltation, logorrhée, 2 nuits sans sommeil.<br><strong>A —</strong> Limitation des stimulations, surveillance hydratation, vérification de l'observance du traitement.<br><strong>R —</strong> Absence d'endormissement ce jour, contact médecin pour réévaluation.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Se laisser entraîner par l'humeur communicative du patient (rires, familiarité) au point de perdre le cadre professionnel.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">L'euphorie maniaque est cliniquement aussi sérieuse qu'un épisode dépressif — elle expose à des conséquences graves et durables si elle n'est pas prise au sérieux.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 7</span>
+  <span class="situation-title">Patient présentant des symptômes négatifs</span>
+  <span class="situation-sujet">M. R., schizophrène connu — incurie et retrait progressifs</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> M. R., schizophrène connu, reste alité, ne parle presque plus, ne se lave plus depuis plusieurs jours, semble "sans énergie".</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Alogie, aboulie, incurie, retrait relationnel, absence d'expression faciale.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Différencier symptôme négatif et syndrome dépressif surajouté, éliminer une cause organique ou iatrogène (sédation).</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Confusion avec de la "paresse" ou du refus volontaire, dégradation somatique par négligence de l'hygiène et de l'alimentation.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Ne pas culpabiliser, proposer sans exiger, valoriser la moindre initiative, adapter le rythme au patient.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Accompagnement progressif à l'hygiène, stimulation douce sans pression, surveillance nutritionnelle.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Évolution de l'incurie, participation ou non aux propositions, différenciation avec un tableau dépressif.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient incurique depuis 3 jours, alogie marquée, aboulie.<br><strong>A —</strong> Proposition accompagnée de toilette, sans insistance.<br><strong>R —</strong> Toilette partielle réalisée avec aide, pas d'amélioration de l'initiative spontanée.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Interpréter les symptômes négatifs comme un refus de soin volontaire ou un manque de motivation "de caractère".</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Les symptômes négatifs sont un symptôme à part entière de la maladie, non un trait de personnalité — ils nécessitent un accompagnement actif, pas une pression.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 8</span>
+  <span class="situation-title">Refus de traitement</span>
+  <span class="situation-sujet">Mme S. — refus catégorique sans explication immédiate</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Mme S. refuse catégoriquement de prendre son traitement du soir, sans donner d'explication immédiate.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Fermeté du refus, attitude (colère, peur, indifférence), présence d'un motif évoqué ou non.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Raison réelle (effet indésirable vécu, croyance sur le médicament, oubli d'explication initiale, épisode délirant sur le traitement).</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Rupture thérapeutique et rechute, escalade du conflit si insistance mal menée, délire de persécution centré sur le soin.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Explorer avant de convaincre, ne jamais forcer ni culpabiliser, respecter le droit du patient à s'exprimer sur son ressenti.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Questionner calmement le motif, proposer d'en parler au médecin, ne pas administrer sous contrainte hors cadre légal encadré.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Motif exact du refus, réaction du patient, action engagée.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patiente refuse le traitement du soir, évoque "des vertiges" ressentis la veille.<br><strong>A —</strong> Exploration du ressenti, pas d'insistance, transmission au médecin de garde.<br><strong>R —</strong> Médecin informé, réévaluation du traitement prévue le lendemain.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Insister ou négocier de façon pressante ("juste pour cette fois"), ce qui abîme la confiance sans résoudre la cause du refus.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Un refus de traitement est une information clinique à part entière (effet indésirable, vécu de la maladie, ambivalence) — pas un obstacle à contourner.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 9</span>
+  <span class="situation-title">Effet indésirable médicamenteux</span>
+  <span class="situation-sujet">M. T. — dystonie aiguë sous antipsychotique</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Deux heures après la prise d'un antipsychotique, M. T. présente une raideur du cou et des mouvements oculaires anormaux.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Dystonie aiguë (torticolis spasmodique, crise oculogyre), anxiété associée du patient face à ce symptôme impressionnant.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Molécule en cause, délai depuis la prise, antécédents similaires, dose éventuellement augmentée récemment.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Détresse respiratoire si atteinte laryngée (rare mais grave), rupture de confiance dans le traitement si mal expliqué.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Rassurer sur le caractère réversible et traitable, agir vite sans dramatiser à voix haute devant le patient.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Alerter le médecin immédiatement (traitement correcteur à prescrire), rester auprès du patient, ne pas administrer la dose suivante sans avis médical.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Symptôme précis, horaire d'apparition, molécule et dose en cause, action engagée.</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Dystonie aiguë (torticolis, crise oculogyre) 2h après antipsychotique.<br><strong>A —</strong> Médecin alerté immédiatement, patient rassuré et accompagné.<br><strong>R —</strong> Correcteur administré sur prescription, régression du symptôme en 20 min.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Attendre la relève pour transmettre un effet indésirable aigu au lieu d'alerter immédiatement.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">Les effets extrapyramidaux aigus sont impressionnants mais réversibles rapidement sous traitement correcteur — la rapidité de l'alerte change le vécu du patient.</span>
+  </div>
+</div>
+</details>
+
+<details class="situation-card">
+<summary class="situation-summary">
+  <span class="situation-num">Situation 10</span>
+  <span class="situation-title">Situation clinique en CMP avec rupture de suivi</span>
+  <span class="situation-sujet">M. U. — deux rendez-vous manqués sans prévenir</span>
+  <span class="situation-chevron">▾</span>
+</summary>
+<div class="situation-body">
+  <div class="situation-scenario"><strong>Situation initiale —</strong> Vous constatez que M. U., suivi mensuellement au CMP, a manqué ses deux derniers rendez-vous sans prévenir.</div>
+  <div class="sit-steps">
+      <div class="sit-step">
+        <div class="sit-step-icon">👁</div>
+        <div class="sit-step-body"><h5>Qu'observez-vous ?</h5><p>Absence de contact depuis plusieurs semaines, éventuel changement dans les dernières observations avant la rupture.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🔍</div>
+        <div class="sit-step-body"><h5>Que cherchez-vous à explorer ?</h5><p>Raison de l'absence (rechute, désinhibition d'un projet de vie, hospitalisation ailleurs, perte de motivation aux soins), risque de rupture de traitement associée.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">⚠️</div>
+        <div class="sit-step-body"><h5>Quels risques rechercher ?</h5><p>Rechute non détectée, isolement, arrêt de traitement invisible faute de contact.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🧭</div>
+        <div class="sit-step-body"><h5>Quelle posture adopter ?</h5><p>Proactivité sans intrusion — contacter sans stigmatiser l'absence, respecter le droit de refus de soin si le patient est joignable et exprime ce choix.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">🛠️</div>
+        <div class="sit-step-body"><h5>Actions dans mon champ de compétence</h5><p>Contact téléphonique selon protocole du service, mobilisation du réseau (médecin traitant, famille si autorisation), proposition d'un nouveau rendez-vous rapproché.</p></div>
+      </div>
+      <div class="sit-step">
+        <div class="sit-step-icon">📣</div>
+        <div class="sit-step-body"><h5>Ce que je transmets</h5><p>Tentatives de contact effectuées, résultat, décision de l'équipe (visite à domicile, alerte médecin traitant).</p></div>
+      </div>
+  </div>
+  <div class="situation-dar">
+    <div class="sd-lbl">📝 Transmission DAR modèle</div>
+    <p><strong>D —</strong> Patient absent à 2 RDV consécutifs sans contact.<br><strong>A —</strong> Appel téléphonique effectué, message laissé, information transmise au médecin référent.<br><strong>R —</strong> Patient rappelle le lendemain, nouveau RDV fixé sous 48h.</p>
+  </div>
+  <div class="situation-erreur">
+    <span class="se-lbl">⚠️ Erreur fréquente</span>
+    <span class="se-txt">Classer l'absence comme "patient perdu de vue" sans démarche active de recontact, ou au contraire imposer un contact insistant perçu comme intrusif.</span>
+  </div>
+  <div class="situation-feedback">
+    <span class="sf-lbl">🧠 Feedback pédagogique</span>
+    <span class="sf-txt">En ambulatoire, la rupture de suivi est elle-même une donnée clinique à part entière — souvent le signe précoce d'une rechute plutôt qu'un simple oubli de rendez-vous.</span>
+  </div>
+</div>
+</details>
+
+</section>
+
+
 
 <!-- ══ QUIZ SÉMIOLOGIE ══ -->
 <div class="quiz-block" id="quiz-semo">
@@ -4839,43 +5609,50 @@ id="addictions" style="margin-bottom:0;">
 <div class="carnet" id="carnet-prog">
   <div class="carnet-banner">
     <h3>Mon carnet de stage</h3>
-    <p>CH Gérard Marchant — Cochez au fur et à mesure de votre progression</p>
+    <p>CH Gérard Marchant — Cliquez sur une compétence pour faire avancer son niveau</p>
+  </div>
+  <div class="carnet-level-legend">
+    <div class="cll-item"><span class="cll-dot" style="background:var(--border);color:var(--muted);">·</span>Non abordé</div>
+    <div class="cll-item"><span class="cll-dot" style="background:#1565C0;">🔵</span>J'ai observé</div>
+    <div class="cll-item"><span class="cll-dot" style="background:#8B6914;">🟡</span>Avec supervision</div>
+    <div class="cll-item"><span class="cll-dot" style="background:#C77800;">🟠</span>Avec aide ponctuelle</div>
+    <div class="cll-item"><span class="cll-dot" style="background:#2D6A4F;">🟢</span>Je sais expliquer ma démarche</div>
   </div>
   <div class="carnet-body">
 
     <div class="carnet-section">
       <div class="carnet-section-title">🔵 Compétences socle — 1re année</div>
       <div class="carnet-items">
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="entretien-d-accueil" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Entretien d'accueil</strong><small>J'ai conduit ou co-conduit un entretien d'accueil infirmier</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="observation-clinique-structuree" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Observation clinique structurée</strong><small>J'ai rédigé un EEM en 10 points dans les transmissions</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="transmission-dar" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Transmission DAR</strong><small>J'ai rédigé une transmission DAR complète et validée par l'équipe</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="risque-suicidaire" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Risque suicidaire</strong><small>J'ai conduit une évaluation du risque suicidaire (Columbia ou équivalent)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="distribution-de-traitement" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Distribution de traitement</strong><small>J'ai participé à la distribution et à la surveillance d'un traitement psychiatrique</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="releve-infirmiere" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Relève infirmière</strong><small>J'ai participé activement à une relève (présentée ou reçue)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="gestion-d-une-situation-d-agitation" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Gestion d'une situation d'agitation</strong><small>J'ai observé ou participé à la gestion d'une situation d'agitation</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="cadre-legal-applique" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Cadre légal appliqué</strong><small>J'ai identifié le mode de soin d'un patient (SL, SDT, SDTPI, SDRE)</small></div>
         </div>
       </div>
@@ -4884,36 +5661,36 @@ id="addictions" style="margin-bottom:0;">
     <div class="carnet-section">
       <div class="carnet-section-title">🟢 Compétences approfondies — 2e année</div>
       <div class="carnet-items">
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="injection-lai" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Injection LAI</strong><small>J'ai assisté à ou réalisé une injection d'antipsychotique à action prolongée</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="synthese-clinique" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Synthèse clinique</strong><small>J'ai participé à une synthèse pluridisciplinaire et contribué verbalement</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="entretien-motivationnel" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Entretien motivationnel</strong><small>J'ai appliqué des techniques d'entretien motivationnel lors d'un entretien</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="surveillance-biologique" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Surveillance biologique</strong><small>J'ai conduit une surveillance biologique (lithiémie, NFS clozapine ou autre)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="reperage-d-effets-secondaires" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Repérage d'effets secondaires</strong><small>J'ai identifié et signalé des effets indésirables médicamenteux (EPS, prise de poids, etc.)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="reperage-des-prodromes" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Repérage des prodromes</strong><small>J'ai identifié des prodromes de rechute et transmis à l'équipe médicale</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="score-ciwa-ar" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Score CIWA-Ar</strong><small>J'ai réalisé une évaluation CIWA-Ar lors d'un sevrage alcoolique</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="plan-de-crise-anticipe" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Plan de crise anticipé</strong><small>J'ai participé à l'élaboration ou à la révision d'un PCA avec un patient</small></div>
         </div>
       </div>
@@ -4922,28 +5699,28 @@ id="addictions" style="margin-bottom:0;">
     <div class="carnet-section">
       <div class="carnet-section-title">🔴 Compétences expert — 3e année</div>
       <div class="carnet-items">
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="animation-etp" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Animation ETP</strong><small>J'ai co-animé une séance d'éducation thérapeutique ou un groupe psychoéducatif</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="projet-qualite-securite" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Projet qualité / sécurité</strong><small>J'ai identifié ou contribué à un projet d'amélioration de la qualité des soins</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="coordination-de-reseau" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Coordination de réseau</strong><small>J'ai participé à une réunion de coordination avec des partenaires extérieurs (médecin traitant, SAMSAH, etc.)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="isolement-contention" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Isolement / contention</strong><small>J'ai assuré une surveillance complète d'une mesure d'isolement ou de contention selon la loi 2022</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="situation-complexe" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Situation complexe</strong><small>J'ai géré une situation clinique complexe impliquant plusieurs dimensions (somatique + psychiatrique + sociale)</small></div>
         </div>
-        <div class="carnet-item" onclick="toggleCarnet(this)">
-          <div class="carnet-check">✓</div>
+        <div class="carnet-item" data-skill="reflexivite-clinique" onclick="cycleCarnetLevel(this)">
+          <div class="carnet-check">·</div>
           <div class="carnet-text"><strong>Réflexivité clinique</strong><small>J'ai rédigé une analyse de situation clinique à partir d'un cas rencontré en stage</small></div>
         </div>
       </div>
@@ -5001,7 +5778,11 @@ id="addictions" style="margin-bottom:0;">
   <span class="nc-txt" style="color:#6b1a1a;">Ces erreurs ne sont pas des fautes morales — ce sont des réflexes naturels qui deviennent problématiques en psychiatrie. Les identifier, c'est déjà ne plus les faire. Elles sont classées par domaine clinique.</span>
 </div>
 
-<h3 class="sub" style="color:var(--bord);">① Erreurs relationnelles et communicationnelles</h3>
+<span class="err-toggle-all" onclick="toggleAllErrAccordions(this)">Tout déplier</span>
+
+<details class="err-accordion" open>
+<summary class="err-accordion-summary">① Erreurs relationnelles et communicationnelles<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5017,8 +5798,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">10</td><td><strong>Parler du patient dans les espaces communs</strong><br><small>Commenter un dossier dans le couloir, la salle de pause.</small></td><td>Violation du secret professionnel. Peut être entendu par d'autres patients.</td><td>Réserver les discussions cliniques aux espaces dédiés (bureau, salle de réunion).</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">② Erreurs d'évaluation clinique</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">② Erreurs d'évaluation clinique<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5034,8 +5819,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">20</td><td><strong>Ne pas noter le changement par rapport à l'habituel</strong><br><small>"Il est comme d'habitude."</small></td><td>En psychiatrie, le changement par rapport à la baseline du patient est plus informatif que la comparaison à une norme.</td><td>"Habituellement ce patient est X. Aujourd'hui il est Y. Ce changement mérite d'être transmis."</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">③ Erreurs de posture soignante</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">③ Erreurs de posture soignante<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5051,8 +5840,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">30</td><td><strong>Se substituer à la famille</strong><br><small>Prendre des nouvelles quotidiennes, appeler le soir pour rassurer.</small></td><td>Transgresse les limites professionnelles. Crée une dépendance que le patient exportera hors de l'hôpital.</td><td>Orienter le patient vers ses ressources familiales et sociales. Renforcer les liens existants, pas les remplacer.</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">④ Erreurs dans les transmissions</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">④ Erreurs dans les transmissions<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5063,8 +5856,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">35</td><td><strong>Oublier de noter le changement par rapport à la veille</strong></td><td>Sans comparaison temporelle, impossible de repérer une évolution clinique.</td><td>"Contrairement à hier (contact maintenu), aujourd'hui : regard fuyant, réponses monosyllabiques, repas refusé."</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">⑤ Erreurs médicamenteuses et de surveillance</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">⑤ Erreurs médicamenteuses et de surveillance<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5075,8 +5872,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">40</td><td><strong>Ne pas noter le site d'une injection LAI</strong></td><td>Sans rotation des sites, risque de fibrose, abcès, douleur chronique.</td><td>Toujours noter dans le dossier : site, côté, heure, lot, délai depuis la dernière injection.</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">⑥ Erreurs dans les situations d'urgence</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">⑥ Erreurs dans les situations d'urgence<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5087,8 +5888,12 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">45</td><td><strong>Sous-estimer les signes de sevrage alcoolique</strong><br><small>"Il tremble un peu, c'est normal."</small></td><td>Le DT (H48–H96) peut être fatal. Les tremblements H6–H24 sont le signe d'un processus engagé.</td><td>CIWA-Ar dès les premiers signes. Contact médecin. Surveillance continue si score &gt;10.</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
-<h3 class="sub" style="color:var(--bord);">⑦ Erreurs de posture face aux familles et au cadre légal</h3>
+<details class="err-accordion">
+<summary class="err-accordion-summary">⑦ Erreurs de posture face aux familles et au cadre légal<span class="err-accordion-chevron">▾</span></summary>
+<div class="err-accordion-body">
 <div class="tw"><table>
   <thead style="background:#5a0a0a;"><tr><th>#</th><th>Erreur fréquente</th><th>Pourquoi c'est problématique</th><th>Alternative recommandée</th></tr></thead>
   <tbody>
@@ -5099,6 +5904,8 @@ id="addictions" style="margin-bottom:0;">
     <tr><td style="font-weight:800;color:var(--bord);text-align:center;">50</td><td><strong>Penser qu'en psychiatrie, "ça peut toujours attendre"</strong><br><small>Reporter la transmission, l'appel, le geste.</small></td><td>En psychiatrie, les situations évoluent vite. Ce qui semblait stable peut basculer en quelques minutes.</td><td>Si vous avez un doute, vous avez déjà la réponse : agissez, alertez, transmettez. Maintenant.</td></tr>
   </tbody>
 </table></div>
+</div>
+</details>
 
 <div class="key-recall">
   <span class="key-recall-icon">🔑</span>
@@ -6042,6 +6849,42 @@ id="addictions" style="margin-bottom:0;">
 </div>
 </section>
 
+<!-- ══ GOUVERNANCE ET VALIDATION DU LIVRET ══ -->
+<section id="gouvernance-validation">
+<div class="part-banner" style="background:linear-gradient(135deg,#2a2a2a,#4a4a4a)" data-num="©">
+  <span class="pb-tag">Cadre institutionnel</span>
+  <h2>Gouvernance et validation du livret</h2>
+  <p class="pb-sub">Métadonnées, comité de relecture, périmètre de responsabilité</p>
+</div>
+
+<div class="gov-grid">
+  <div class="gov-item"><span class="gov-lbl">Version</span><span class="gov-val">[x.x — à compléter]</span></div>
+  <div class="gov-item"><span class="gov-lbl">Dernière mise à jour</span><span class="gov-val">[JJ/MM/AAAA — à compléter]</span></div>
+  <div class="gov-item"><span class="gov-lbl">Comité de relecture</span><span class="gov-val">[Nom, fonction] · [Nom, fonction] · [Nom, fonction]</span></div>
+  <div class="gov-item"><span class="gov-lbl">Validation institutionnelle</span><span class="gov-val">[Direction des soins / IFSI], le [JJ/MM/AAAA]</span></div>
+</div>
+
+<div class="notion-cle" style="background:var(--warm);border-color:var(--muted);margin-top:16px;">
+  <span class="nc-lbl" style="color:#344055;">Périmètre et responsabilité</span>
+  <span class="nc-txt">Ce livret est un outil pédagogique à visée de formation. Il ne remplace ni un protocole de service, ni une décision médicale, ni les procédures institutionnelles en vigueur au CH Gérard Marchant. En cas de divergence, le protocole local et l'avis de l'équipe encadrante prévalent toujours sur le contenu de ce document.</span>
+</div>
+
+<div class="notion-cle" style="background:var(--gold-l);border-color:var(--gold);margin-top:12px;">
+  <span class="nc-lbl" style="color:var(--gold);">Distinction du contenu</span>
+  <span class="nc-txt">Le contenu de sémiologie générale, de pharmacologie et de raisonnement clinique s'appuie sur des références partagées (DSM-5, CIM-10, recommandations HAS). Le contenu relatif à l'organisation du CHGM, à ses pôles et à ses procédures est propre à l'établissement et doit être vérifié auprès de l'encadrement en cas de doute ou d'évolution.</span>
+</div>
+
+<h3 class="sub" style="margin-top:20px;">Références</h3>
+<ul style="font-size:12px;color:#344055;line-height:1.9;padding-left:20px;">
+  <li>American Psychiatric Association — <em>DSM-5</em>, Manuel diagnostique et statistique des troubles mentaux, 5e édition, 2013.</li>
+  <li>Organisation mondiale de la santé — <em>CIM-10</em>, Classification internationale des maladies, chapitre V (troubles mentaux et du comportement).</li>
+  <li>Haute Autorité de Santé (HAS) — Recommandations de bonnes pratiques en psychiatrie et santé mentale [référence(s) précise(s) à compléter selon les recommandations effectivement citées].</li>
+  <li>Loi n° 2022-46 du 22 janvier 2022 — Isolement et contention en psychiatrie.</li>
+</ul>
+
+<p style="font-size:11px;color:var(--muted);margin-top:16px;">Pour signaler une erreur, une imprécision ou suggérer un ajout à ce livret : [adresse ou formulaire de contact à compléter].</p>
+</section>
+
 <hr class="sep">
 <p style="text-align:center;font-size:11.5px;color:var(--muted);margin:20px 0 60px;">
   Document réalisé par le service de soins infirmiers — CH Gérard Marchant, Toulouse<br>
@@ -6051,18 +6894,74 @@ id="addictions" style="margin-bottom:0;">
 
 <script>
 
-/* ═══ CARNET DE PROGRESSION ═══ */
-function toggleCarnet(el) {
-  el.classList.toggle('done');
+/* ═══ CARNET DE PROGRESSION — 4 niveaux + sauvegarde locale ═══ */
+const CARNET_LEVELS = ['·', '🔵', '🟡', '🟠', '🟢'];
+const CARNET_STORAGE_KEY = 'livret-psy-chgm-carnet-v1';
+
+function loadCarnetState(){
+  try {
+    return JSON.parse(localStorage.getItem(CARNET_STORAGE_KEY) || '{}');
+  } catch(e){ return {}; }
+}
+function saveCarnetState(state){
+  try { localStorage.setItem(CARNET_STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+function applyCarnetLevel(el, level){
+  el.dataset.level = level;
+  const check = el.querySelector('.carnet-check');
+  if (check) check.textContent = CARNET_LEVELS[level];
+}
+function cycleCarnetLevel(el){
+  const current = parseInt(el.dataset.level || '0', 10);
+  const next = (current + 1) % CARNET_LEVELS.length;
+  applyCarnetLevel(el, next);
+  const skill = el.dataset.skill;
+  if (skill){
+    const state = loadCarnetState();
+    state[skill] = next;
+    saveCarnetState(state);
+  }
+  updateCarnetProgress();
+}
+function restoreCarnetState(){
+  const state = loadCarnetState();
+  document.querySelectorAll('.carnet-item[data-skill]').forEach(el => {
+    const level = state[el.dataset.skill] || 0;
+    applyCarnetLevel(el, level);
+  });
   updateCarnetProgress();
 }
 function updateCarnetProgress() {
-  const total = document.querySelectorAll('.carnet-item').length;
-  const done = document.querySelectorAll('.carnet-item.done').length;
+  const items = document.querySelectorAll('.carnet-item[data-skill]');
+  const total = items.length;
+  let started = 0, mastered = 0;
+  items.forEach(el => {
+    const lvl = parseInt(el.dataset.level || '0', 10);
+    if (lvl >= 1) started++;
+    if (lvl === 4) mastered++;
+  });
   const fill = document.getElementById('carnet-fill');
   const label = document.getElementById('carnet-label');
-  if (fill) fill.style.width = (total > 0 ? done/total*100 : 0) + '%';
-  if (label) label.textContent = done + ' / ' + total + ' compétences validées';
+  if (fill) fill.style.width = (total > 0 ? started/total*100 : 0) + '%';
+  if (label) label.textContent = started + ' / ' + total + ' compétences abordées · ' + mastered + ' maîtrisées 🟢';
+}
+document.addEventListener('DOMContentLoaded', restoreCarnetState);
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(restoreCarnetState, 0);
+}
+
+/* ═══ ACCORDÉONS — 50 ERREURS FRÉQUENTES ═══ */
+function toggleAllErrAccordions(btn){
+  const accordions = document.querySelectorAll('#erreurs-frequentes .err-accordion');
+  const anyClosed = Array.from(accordions).some(d => !d.open);
+  accordions.forEach(d => { d.open = anyClosed; });
+  btn.textContent = anyClosed ? 'Tout replier' : 'Tout déplier';
+}
+function toggleAllSituations(btn){
+  const cards = document.querySelectorAll('#situations-interactives .situation-card');
+  const anyClosed = Array.from(cards).some(d => !d.open);
+  cards.forEach(d => { d.open = anyClosed; });
+  btn.textContent = anyClosed ? 'Tout replier' : 'Tout déplier';
 }
 
 
